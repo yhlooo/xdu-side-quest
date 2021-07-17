@@ -9,3 +9,5 @@
 - 2017H2 projects/homepage-2.0
 - 2017H2 projects/sssta-official-site-2017
 - 2018H1 projects/rw-hackathon
+- 2020H1 projects/yqt-bot
+

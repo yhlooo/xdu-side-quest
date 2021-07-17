@@ -1,0 +1,11 @@
+# 无用的
+__pycache__/
+*.pyc
+
+# 与环境相关的
+/.idea/
+/venv/
+
+# 保密的
+/conf/secrets.py
+/conf/geo_api_info/*.json

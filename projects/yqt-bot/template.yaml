@@ -1,0 +1,36 @@
+# 用于配置部署 SCF
+
+Resources:
+  default:
+    Type: 'TencentCloud::Serverless::Namespace'
+    yqt_bot:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        Type: 'Event'
+        Handler: 'index.main_handler'
+        Runtime: 'Python3.6'
+        CodeUri: './'
+        Role: 'SCF_QcsRole'
+        Timeout: 30
+        MemorySize: 128
+        Description: '疫情通填报、截图生成、截图上传机器人'
+
+        Events:
+          yqt_bot_apigw:
+            Type: 'APIGW'
+            Properties:
+              Enable: true
+              ServiceId: 'service-ox03gtca'
+              StageName: 'release'
+              HttpMethod: 'GET'
+              IntegratedResponse: true
+          submit_to_yqt:
+            Type: 'Timer'
+            Properties:
+              Enable: true
+              CronExpression: '0 */20 8,9 * * * *'
+          upload_screenshot:
+            Type: 'Timer'
+            Properties:
+              Enable: true
+              CronExpression: '0 5 9 * * * *'

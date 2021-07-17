@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>获取经纬度</title>
+</head>
+<body>
+
+<div>经度（longitude）：<span id="lon-text"></span></div>
+<div>维度（latitude）：<span id="lat-text"></span></div>
+
+<script>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+        alert('该设备或浏览器不支持获取地理位置信息。');
+    }
+}
+
+function showPosition(position) {
+    console.log(position.coords);
+    document.getElementById('lon-text').innerText = position.coords.longitude.toString();
+    document.getElementById('lat-text').innerText = position.coords.latitude.toString();
+}
+
+getLocation();
+</script>
+
+</body>
+</html>
