@@ -1,0 +1,115 @@
+多看多想
+	搜索引擎
+		Google                  https://www.google.com.hk/
+		Bing                    http://cn.bing.com/
+	优雅的语言
+		Python                  https://www.python.org/
+		Node.js                 https://nodejs.org/en/
+		Node.js中文网           http://nodejs.cn/
+	有趣的教程
+		W3School                http://www.w3school.com.cn/
+		w3schools               https://www.w3schools.com/
+		廖雪峰的官方网站        https://www.liaoxuefeng.com/
+		菜鸟教程                http://www.runoob.com/
+		Git简易指南             http://www.bootcss.com/p/git-guide/
+		《计算机网络-自顶向下方法》随课附件 http://wps.pearsoned.com/ecs_kurose_compnetw_6/
+		逗比根据地              https://doub.io/
+		Requests中文文档        http://docs.python-requests.org/zh_CN/latest/
+	Web前端
+		Bootstrap               https://getbootstrap.com/
+		Bootstrap中文网         http://www.bootcss.com/
+		Bootstrap3.3.7中文文档  http://v3.bootcss.com/
+		Layui                   http://www.layui.com/
+		Jekyll                  http://jekyllcn.com/
+		Less                    http://lesscss.org/
+		jQuery                  http://jquery.com/
+		Vue.js                  https://cn.vuejs.org/
+	Web后端
+		Flask                   http://flask.pocoo.org/
+		Flask中文文档           http://dormousehole.readthedocs.io/en/latest/
+		Django                  https://www.djangoproject.com/
+	Blog
+		Tobiaslee - Blog        http://tobiaslee.top/
+		叁拾柒 - Blog           http://www.three7.cc/
+
+拼命干活
+	常用工具
+		GitHub                  https://github.com/
+		Coding.net              https://coding.net/
+		阿里云                  https://cn.aliyun.com/
+		腾讯云                  https://www.qcloud.com/
+		不知名的在线编译器      http://www.dooccn.com/
+		ideone                  https://ideone.com/
+		BootCDN                 http://www.bootcdn.cn/
+	图标库
+		Font Awesome            http://www.bootcss.com/p/font-awesome/
+		Layui图标               http://www.layui.com/doc/element/icon.html
+		Glyphicons              http://glyphicons.com/
+		Cikonss                 http://www.bootcss.com/p/cikonss/
+		Simple Icons            http://www.bootcss.com/p/simple-icons/
+		Iconfont-阿里矢量图标库 http://www.iconfont.cn/plus
+	图片库
+		Pixabay                 https://pixabay.com/
+		Pexels                  https://www.pexels.com/
+		Unsplash                https://unsplash.com/
+		Pinterest               https://www.pinterest.com/
+		千图网                  http://www.58pic.com/
+		懒人图库                http://www.lanrentuku.com/
+		Pixiv                   https://www.pixiv.net/
+	GitHub托管项目
+		my_Blog-2016            https://github.com/Keyboard-l/my_Blog-2016
+		my_Blog-2016 Pages      https://keyboard-l.github.io/my_Blog-2016/
+		Message_Board           https://github.com/Keyboard-l/Message_Board
+		SignIn_Web_APP          https://github.com/Keyboard-l/SignIn_Web_APP
+		Game_of_Life            https://github.com/Keyboard-l/Game_of_Life
+		Game_of_Life Pages      https://keyboard-l.github.io/Game_of_Life/
+		my_Blog-2017            https://github.com/Keyboard-l/myBlog
+		my_Blog-2017 Pages      http://blog.keybrl.com/
+		SSSTA-Official_Site     https://github.com/Keyboard-l/SSSTA-Official-Site
+		SSSTA-Official_Site Pages https://keyboard-l.github.io/SSSTA-Official-Site/
+		my_Home_Page            https://github.com/Keyboard-l/my_Home_Page
+		my_Home_Page Pages      https://keyboard-l.github.io/my_Home_Page/
+
+愉快地玩耍
+	Steam                   http://store.steampowered.com/
+	Steam Card Exchange     http://www.steamcardexchange.net/
+	Minecraft               https://minecraft.net/zh-hans/
+	Flappy Bird             http://flappybird.io/
+	Tetris                  https://tetris.com/
+	2048                    http://gabrielecirulli.github.io/2048/
+	Keybr                   http://www.keybr.com/
+
+乱七八糟的玩意儿
+	理财产品
+		Steam                   http://store.steampowered.com/
+		淘宝                    https://www.taobao.com/
+		京东                    https://www.jd.com/
+		Amazon                  https://www.amazon.cn/
+		支付宝                  https://www.alipay.com/
+		中国工商银行            http://www.icbc.com.cn/icbc/
+		交通银行                http://www.bankcomm.com/BankCommSite/default.shtml
+	无聊的事务
+		南海桂城中学            http://nhgz.gd.cn/
+		西安电子科技大学        http://www.xidian.edu.cn/
+		西电教务处              http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2Fjwxt.xidian.edu.cn%2Fcaslogin.jsp
+		物理实验
+		西电体育部              http://tyb.xidian.edu.cn/
+		西电体育打卡查询        http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2F202.117.124.85%2Flogin%2F
+		英语交互学习            http://jhyy.xidian.edu.cn/index.php?NCCE=c5bcd53e4b04aeda5217f9443d7e5d3d
+	有用的工具
+		Dll-Files           https://cn.dll-files.com/
+		我电脑的驱程        https://support.hp.com/cn-zh/drivers/selfservice/hp-pavilion-gaming-15-ak000-notebook/8610971/model/9329851
+	有趣的玩意儿
+		账户泄漏检测        https://haveibeenpwned.com/
+		Periodic Table Of Devops Tools https://xebialabs.com/periodic-table-of-devops-tools
+	获取世界资讯
+		Google                  https://www.google.com.hk/
+		Bing                    http://cn.bing.com/
+		Wikipedia               https://www.wikipedia.org/
+		YouTube                 https://www.youtube.com/
+		Twitter                 https://twitter.com/
+		CNN                     http://edition.cnn.com/
+		BBC                     http://www.bbc.com/news
+		BBC中文网               http://www.bbc.com/zhongwen/simp
+		知乎                    https://www.zhihu.com/
+		果壳                    http://www.guokr.com/

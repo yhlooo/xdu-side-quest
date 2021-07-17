@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Keyboard</title>
+  <link href="./img/icon.png" rel="icon">
+  <!-- Bootstrap -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="navbar" id="navbar">
+  <div class="container-fluid navbar-menu">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbar-a" href="http://blog.keybrl.com/" target="_blank">Keyboard 2.0</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="dropdown-ctrl" id="dropdown-ctrl-1">多看多想</a></li>
+        <li><a class="dropdown-ctrl" id="dropdown-ctrl-2">拼命干活</a></li>
+        <li><a class="dropdown-ctrl" id="dropdown-ctrl-3">愉快地玩耍</a></li>
+        <li><a class="dropdown-ctrl" id="dropdown-ctrl-4">乱七八糟的玩意儿</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="dropdown-ctrl" id="dropdown-ctrl-5">常用链接</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-bg" id="navbar-bg" hidden><div class="navbar-bg-cur" id="navbar-cur"></div></div>
+  <div class="dropdown-main" id="dropdown-main-1" hidden>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>搜索引擎</b></li>
+          <li><a href="https://www.google.com.hk/" class="dropdown-link" target="_blank">Google</a></li>
+          <li><a href="http://cn.bing.com/" class="dropdown-link" target="_blank">Bing</a></li>
+          <li><hr></li>
+        </ul>
+        <ul class="dropdown-list">
+          <li><b>优雅的语言</b></li>
+          <li><a href="https://www.python.org/" class="dropdown-link" target="_blank">Python</a></li>
+          <li><a href="https://nodejs.org/en/" class="dropdown-link" target="_blank">Node.js</a></li>
+          <li><a href="http://nodejs.cn/" class="dropdown-link" target="_blank">Node.js中文网</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>有趣的教程</b></li>
+          <li><a href="http://www.w3school.com.cn/" class="dropdown-link" target="_blank">W3School</a></li>
+          <li><a href="https://www.w3schools.com/" class="dropdown-link" target="_blank">w3schools</a></li>
+          <li><a href="https://www.liaoxuefeng.com/" class="dropdown-link" target="_blank">廖雪峰的官方网站</a></li>
+          <li><a href="http://www.runoob.com/" class="dropdown-link" target="_blank">菜鸟教程</a></li>
+          <li><a href="http://www.bootcss.com/p/git-guide/" class="dropdown-link" target="_blank">Git简易指南</a></li>
+          <li><a href="http://wps.pearsoned.com/ecs_kurose_compnetw_6/" class="dropdown-link" target="_blank">《计算机网络：自顶向下方法》随课附件</a></li>
+          <li><a href="https://doub.io/" class="dropdown-link" target="_blank">逗比根据地</a></li>
+          <li><a href="http://docs.python-requests.org/zh_CN/latest/" class="dropdown-link" target="_blank">Requests中文文档</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-sm-block visible-md-block"></div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>Web前端</b></li>
+          <li><a href="https://getbootstrap.com/" class="dropdown-link" target="_blank">Bootstrap</a></li>
+          <li><a href="http://www.bootcss.com/" class="dropdown-link" target="_blank">Bootstrap中文网</a></li>
+          <li><a href="http://v3.bootcss.com/" class="dropdown-link" target="_blank">Bootstrap3.3.7中文文档</a></li>
+          <li><a href="http://www.layui.com/" class="dropdown-link" target="_blank">Layui</a></li>
+          <li><a href="http://jekyllcn.com/" class="dropdown-link" target="_blank">Jekyll</a></li>
+          <li><a href="http://lesscss.org/" class="dropdown-link" target="_blank">Less</a></li>
+          <li><a href="http://jquery.com/" class="dropdown-link" target="_blank">jQuery</a></li>
+          <li><a href="https://cn.vuejs.org/" class="dropdown-link" target="_blank">Vue.js</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>Web后端</b></li>
+          <li><a href="http://flask.pocoo.org/" class="dropdown-link" target="_blank">Flask</a></li>
+          <li><a href="http://dormousehole.readthedocs.io/en/latest/" class="dropdown-link" target="_blank">Flask中文文档</a></li>
+          <li><a href="https://www.djangoproject.com/" class="dropdown-link" target="_blank">Django</a></li>
+          <li><hr></li>
+        </ul>
+        <ul class="dropdown-list">
+          <li><b>牛人的Blog</b></li>
+          <li><a href="http://tobiaslee.top/" class="dropdown-link" target="_blank">Tobiaslee - Blog</a></li>
+          <li><a href="http://www.three7.cc/" class="dropdown-link" target="_blank">叁拾柒 - Blog</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-main" id="dropdown-main-2" hidden>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>常用工具</b></li>
+          <li><a href="https://github.com/" class="dropdown-link" target="_blank">GitHub</a></li>
+          <li><a href="https://coding.net/" class="dropdown-link" target="_blank">Coding.net</a></li>
+          <li><a href="https://cn.aliyun.com/" class="dropdown-link" target="_blank">阿里云</a></li>
+          <li><a href="https://www.qcloud.com/" class="dropdown-link" target="_blank">腾讯云</a></li>
+          <li><a href="http://www.dooccn.com/" class="dropdown-link" target="_blank">不知名的在线编译器</a></li>
+          <li><a href="https://ideone.com/" class="dropdown-link" target="_blank">ideone</a></li>
+          <li><a href="http://www.bootcdn.cn/" class="dropdown-link" target="_blank">BootCDN</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>图标库</b></li>
+          <li><a href="http://www.bootcss.com/p/font-awesome/" class="dropdown-link" target="_blank">Font Awesome</a></li>
+          <li><a href="http://www.layui.com/doc/element/icon.html" class="dropdown-link" target="_blank">Layui图标</a></li>
+          <li><a href="http://glyphicons.com/" class="dropdown-link" target="_blank">Glyphicons</a></li>
+          <li><a href="http://www.bootcss.com/p/cikonss/" class="dropdown-link" target="_blank">Cikonss</a></li>
+          <li><a href="http://www.bootcss.com/p/simple-icons/" class="dropdown-link" target="_blank">Simple Icons</a></li>
+          <li><a href="http://www.iconfont.cn/plus" class="dropdown-link" target="_blank">Iconfont-阿里矢量图标库</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-sm-block visible-md-block"></div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>图片库</b></li>
+          <li><a href="https://pixabay.com/" class="dropdown-link" target="_blank">Pixabay</a></li>
+          <li><a href="https://www.pexels.com/" class="dropdown-link" target="_blank">Pexels</a></li>
+          <li><a href="https://unsplash.com/" class="dropdown-link" target="_blank">Unsplash</a></li>
+          <li><a href="https://www.pinterest.com/" class="dropdown-link" target="_blank">Pinterest</a></li>
+          <li><a href="http://www.58pic.com/" class="dropdown-link" target="_blank">千图网</a></li>
+          <li><a href="http://www.lanrentuku.com/" class="dropdown-link" target="_blank">懒人图库</a></li>
+          <li><a href="https://www.pixiv.net/" class="dropdown-link" target="_blank">Pixiv</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>GitHub托管项目</b></li>
+          <li><a href="https://github.com/Keyboard-l/my_Blog-2016" class="dropdown-link" target="_blank">my_Blog-2016</a></li>
+          <li><a href="https://keyboard-l.github.io/my_Blog-2016/" class="dropdown-link" target="_blank">my_Blog-2016 Pages</a></li>
+          <li><a href="https://github.com/Keyboard-l/Message_Board" class="dropdown-link" target="_blank">Message_Board</a></li>
+          <li><a href="https://github.com/Keyboard-l/SignIn_Web_APP" class="dropdown-link" target="_blank">SignIn_Web_APP</a></li>
+          <li><a href="https://github.com/Keyboard-l/Game_of_Life" class="dropdown-link" target="_blank">Game_of_Life</a></li>
+          <li><a href="https://keyboard-l.github.io/Game_of_Life/" class="dropdown-link" target="_blank">Game_of_Life Pages</a></li>
+          <li><a href="https://github.com/Keyboard-l/myBlog" class="dropdown-link" target="_blank">my_Blog-2017</a></li>
+          <li><a href="http://blog.keybrl.com/" class="dropdown-link" target="_blank">my_Blog-2017 Pages</a></li>
+          <li><a href="https://github.com/Keyboard-l/SSSTA-Official-Site" class="dropdown-link" target="_blank">SSSTA-Official_Site</a></li>
+          <li><a href="https://keyboard-l.github.io/SSSTA-Official-Site/" class="dropdown-link" target="_blank">SSSTA-Official_Site Pages</a></li>
+          <li><a href="https://github.com/Keyboard-l/my_Home_Page" class="dropdown-link" target="_blank">my_Home_Page</a></li>
+          <li><a href="https://keyboard-l.github.io/my_Home_Page/" class="dropdown-link" target="_blank">my_Home_Page Pages</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-main" id="dropdown-main-3" hidden>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>没什么好玩的</b></li>
+          <li><a href="http://store.steampowered.com/" class="dropdown-link" target="_blank">Steam</a></li>
+          <li><a href="http://www.steamcardexchange.net/" class="dropdown-link" target="_blank">Steam Card Exchange</a></li>
+          <li><a href="https://minecraft.net/zh-hans/" class="dropdown-link" target="_blank">Minecraft</a></li>
+          <li><a href="http://flappybird.io/" class="dropdown-link" target="_blank">Flappy Bird</a></li>
+          <li><a href="https://tetris.com/" class="dropdown-link" target="_blank">Tetris</a></li>
+          <li><a href="http://gabrielecirulli.github.io/2048/" class="dropdown-link" target="_blank">2048</a></li>
+          <li><a href="http://www.keybr.com/" class="dropdown-link" target="_blank">Keybr - Typing Test</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-main" id="dropdown-main-4" hidden>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>理财产品</b></li>
+          <li><a href="http://store.steampowered.com/" class="dropdown-link" target="_blank">Steam</a></li>
+          <li><a href="https://www.taobao.com/" class="dropdown-link" target="_blank">淘宝</a></li>
+          <li><a href="https://www.jd.com/" class="dropdown-link" target="_blank">京东</a></li>
+          <li><a href="https://www.amazon.cn/" class="dropdown-link" target="_blank">Amazon</a></li>
+          <li><a href="https://www.alipay.com/" class="dropdown-link" target="_blank">支付宝</a></li>
+          <li><a href="http://www.icbc.com.cn/icbc/" class="dropdown-link" target="_blank">中国工商银行</a></li>
+          <li><a href="http://www.bankcomm.com/BankCommSite/default.shtml" class="dropdown-link" target="_blank">交通银行</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>无聊的事务</b></li>
+          <li><a href="http://nhgz.gd.cn/" class="dropdown-link" target="_blank">南海桂城中学</a></li>
+          <li><a href="http://www.xidian.edu.cn/" class="dropdown-link" target="_blank">西安电子科技大学</a></li>
+          <li><a href="http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2Fjwxt.xidian.edu.cn%2Fcaslogin.jsp" class="dropdown-link" target="_blank">西电教务处</a></li>
+          <li><a href="http://wlsy.xidian.edu.cn/pec/index.asp" class="dropdown-link" target="_blank">物理实验</a></li>
+          <li><a href="http://tyb.xidian.edu.cn/" class="dropdown-link" target="_blank">西电体育部</a></li>
+          <li><a href="http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2F202.117.124.85%2Flogin%2F" class="dropdown-link" target="_blank">西电体育打卡查询</a></li>
+          <li><a href="http://jhyy.xidian.edu.cn/index.php?NCCE=c5bcd53e4b04aeda5217f9443d7e5d3d" class="dropdown-link" target="_blank">英语交互学习</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-sm-block visible-md-block"></div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>有用的工具</b></li>
+          <li><a href="https://cn.dll-files.com/" class="dropdown-link" target="_blank">Dll-Files</a></li>
+          <li><a href="https://support.hp.com/cn-zh/drivers/selfservice/hp-pavilion-gaming-15-ak000-notebook/8610971/model/9329851" class="dropdown-link" target="_blank">我电脑的驱程</a></li>
+          <li><hr></li>
+        </ul>
+        <ul class="dropdown-list">
+          <li><b>有趣的玩意儿</b></li>
+          <li><a href="https://haveibeenpwned.com/" class="dropdown-link" target="_blank">账户泄漏检测</a></li>
+          <li><a href="https://xebialabs.com/periodic-table-of-devops-tools" class="dropdown-link" target="_blank">Periodic Table Of Devops Tools</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <ul class="dropdown-list">
+          <li><b>获取世界资讯</b></li>
+          <li><a href="https://www.google.com.hk/" class="dropdown-link" target="_blank">Google</a></li>
+          <li><a href="http://cn.bing.com/" class="dropdown-link" target="_blank">Bing</a></li>
+          <li><a href="https://www.wikipedia.org/" class="dropdown-link" target="_blank">Wikipedia</a></li>
+          <li><a href="https://www.youtube.com/" class="dropdown-link" target="_blank">YouTube</a></li>
+          <li><a href="https://twitter.com/" class="dropdown-link" target="_blank">Twitter</a></li>
+          <li><a href="http://edition.cnn.com/" class="dropdown-link" target="_blank">CNN</a></li>
+          <li><a href="http://www.bbc.com/news" class="dropdown-link" target="_blank">BBC</a></li>
+          <li><a href="http://www.bbc.com/zhongwen/simp" class="dropdown-link" target="_blank">BBC中文网</a></li>
+          <li><a href="https://www.zhihu.com/" class="dropdown-link" target="_blank">知乎</a></li>
+          <li><a href="http://www.guokr.com/" class="dropdown-link" target="_blank">果壳</a></li>
+          <li><hr></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-main sidebar-right" id="dropdown-main-5" hidden>
+    <div class="sidebar">
+      <div class="sidebar-item hyperlink-main">
+        <a href="https://www.google.com/" target="_blank"><div class="hyperlink text-center">
+          <img src="./img/hyperlink/google.png" style="height:5vw;width:14.75vw">
+        </div></a>
+        <a href="http://cn.bing.com/" target="_blank"><div class="hyperlink text-center">
+          <img src="./img/hyperlink/bing.png" style="height:5vw;width:13vw">
+        </div></a>
+        <a href="https://github.com/" target="_blank"><div class="hyperlink text-center">
+          <img src="./img/hyperlink/github.png" style="height:5vw;width:19.3vw">
+        </div></a>
+        <a href="https://cn.aliyun.com/" target="_blank"><div class="hyperlink text-center">
+          <img src="./img/hyperlink/aliyun0.png" style="height:2.2vw;width:14.65vw">
+        </div></a>
+        <a href="https://www.qcloud.com/" target="_blank"><div class="hyperlink text-center">
+          <img src="./img/hyperlink/tencent_cloud.png" style="height:2.2vw;width:14.65vw">
+        </div></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 visible-lg">
+      <div class="row">
+        <div class="sidebar col-xs-11" id="left_menu">
+          <div class="sidebar-item time-main">
+            <h1><span id="hours">H</span>:<span id="minutes">mm</span> <small id="seconds">ss</small></h1>
+            <h2><span id="day">Day</span>, <span id="month">Month</span> <span id="date">Date</span></h2>
+          </div>
+          <div class="sidebar-item weather-main row" id="weather-main" title="Click to Reload\nUpdate: yyyy-mm-dd HH:MM:SS" onclick="getWeather()">
+            <div class="col-xs-4" id="weather_img">
+              <span class="icon-refresh" style="font-size: 5vw;"></span>
+            </div>
+            <div class="col-xs-8 weather-temp">
+              <h1>
+                <span id="temp">99</span>°<small>C</small>
+                <small id="weather" style="color: #ffffff;">青蛙雨</small>
+                <button class="btn-mine" id="city" title="Magical City\nClick to Reload" onclick="getLocation()">
+                  魔都 <span class="icon-map-marker"></span>
+                </button>
+              </h1>
+              <h2>
+                <span id="temp1">99</span>°<small>C</small>
+                /
+                <span id="temp2">99</span>°<small>C</small>
+
+              </h2>
+            </div>
+          </div>
+          <div class="sidebar-item netState-main">
+            <h1>
+              Network State <span class="icon-refresh" title="Retry" style="cursor: pointer;" onclick="getNetState()" id="netState_refresh"></span>
+            </h1>
+            <div class="netState-info">
+              <p>IPv4 Address: <b><span id="ip_address">xxx.xxx.xxx.xxx</span></b></p>
+              <p>State: <b><span id="net_state">Network state</span></b></p>
+              <p><b><span id="gfw_state">GFW state</span></b></p>
+            </div>
+            <h1><span class="icon-off online" id="net-switch" style="cursor: pointer;" onclick="switch_net()"></span></h1>
+          </div>
+        </div>
+        <div class="col-xs-1 sidebar_switch left" id="left_menu_ctrl"><img src="./img/right_menu_ctrl0.png"></div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-8 col-sm-10 col-lg-offset-0 col-md-offset-2 col-sm-offset-1" id="search_main">
+      <form class="search_box_main" onsubmit="go_search()">
+        <div class="input-group">
+          <div class="input-group-btn search_box">
+            <button type="button" class="btn btn-default dropdown-toggle search_box search_engine_logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="engin_title">
+              <img src="./img/bing_logo.png" height="40" width="118">　<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu search_engine_logo">
+              <li><a href="#" onclick="search_engine_switch('bing')"><img src="./img/bing_logo.png" height="40" width="118"></a></li>
+              <li><a href="#" onclick="search_engine_switch('google')"><img src="./img/google_logo.png" height="40" width="118"></a></li>
+            </ul>
+          </div>
+          <input type="text" class="form-control search_box" placeholder="Search for..." autocomplete="off" id="search_text" oninput="search_suggest()">
+          <div id="search_sug" class="input_dropdown" hidden></div>
+          <span class="input-group-btn search_box">
+            <button class="btn btn-default search_box" type="button" onclick="go_search()"><img src="./img/search_logo.png"></button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div><!-- /.row -->
+</section>
+<div id="gfw_try" hidden></div>
+<script src="./js/jquery.js" rel="script"></script>
+<script src="./js/bootstrap.min.js" rel="script"></script>
+<script src="./js/cookies.min.js" rel="script"></script>
+<script src="./js/view.min.js" rel="script"></script>
+<script src="./js/search.min.js" rel="script"></script>
+<script src="./js/sidebar.min.js" rel="script"></script>
+<script src="./js/run.min.js" rel="script"></script>
+</body>
+</html>
