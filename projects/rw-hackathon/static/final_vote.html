@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>最终投票 - 软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>进入决赛的团队</h2>
+      <div id="groups_list">
+        <fieldset class="layui-elem-field" v-for="group in groups">
+          <legend>{{ group.group_name }}（{{ group.grade }}）</legend>
+          <div class="layui-field-box">
+            <p style="word-break: break-all"><span>成员：</span><span>{{ group.members }}</span></p>
+            <p style="word-break: break-all"><span>作品名：</span><span>{{ group.work_name }}</span></p>
+            <p style="word-break: break-all"><span>作品简介：</span><span>{{ group.work_description }}</span></p>
+            <button v-bind:id="'vote-btn1-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !btn1}" v-bind:onclick="'vote(\'' + group.group_id + '\', 1)'">最有趣</button>
+            <button v-bind:id="'vote-btn2-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !btn2}" v-bind:onclick="'vote(\'' + group.group_id + '\', 2)'">技术最牛</button>
+            <button v-bind:id="'vote-btn3-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !btn3}" v-bind:onclick="'vote(\'' + group.group_id + '\', 3)'">工程上最有用</button>
+            <button v-bind:id="'vote-btn4-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !btn4}" v-bind:onclick="'vote(\'' + group.group_id + '\', 4)'">最有创意</button>
+            <button v-bind:id="'vote-btn5-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !btn5}" v-bind:onclick="'vote(\'' + group.group_id + '\', 4)'">投票</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script>
+    var url_groups_list = '//10.233.66.10:8080/final_groups';
+    var url_get_votes = '//10.233.66.10:8080/get_final_votes';
+    var url_vote = '//10.233.66.10:8080/final_vote';
+    var groups_list = new Vue({
+        el: '#groups_list',
+        data: {
+            groups: [],
+            btn1: false,
+            btn2: false,
+            btn3: false,
+            btn4: false,
+            btn5: false
+        }
+    });
+    function vote(group_id, number) {
+        if (!group_id) {
+            alert('该队不存在');
+            return 0;
+        }
+        if (!token) {
+            alert('请使用投票链接投票');
+            return 0;
+        }
+        $.ajax({
+            url: url_vote,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: {
+                'token': token,
+                'group_id': group_id,
+                'number': number
+            },
+            complete: function(xhr) {
+                if (200 === xhr.status)
+                    location.reload();
+                else if (404 === xhr.status)
+                    alert('该组不存在');
+                else if (400 === xhr.status)
+                    alert('请求错误');
+                else if (403 === xhr.status)
+                    alert('每个队伍只能对每项投出1票（共4票），每个评委只能投3票，如有需要，您可以通过点击已投票的投票按钮取消先前的投票');
+                else
+                    alert('未知错误，请稍后重试');
+            }
+        });
+    }
+    function get_url_param(key) {
+        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null)
+            return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+
+    $.ajax({
+        url: url_groups_list,
+        xhrFields: {
+            withCredentials: true
+        },
+        async: false,
+        complete: function(xhr) {
+            if (200 === xhr.status)
+                groups_list.$data.groups = eval('(' + xhr.responseText + ')');
+            else
+                alert('加载参赛队伍信息错误，请稍后重试');
+        }
+    });
+    var token = get_url_param('token');
+    if (token) {
+        groups_list.$data.btn1 = true;
+        groups_list.$data.btn2 = true;
+        groups_list.$data.btn3 = true;
+        groups_list.$data.btn4 = true;
+        groups_list.$data.btn5 = true;
+        $.ajax({
+            url: url_get_votes,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: {
+                'token': token
+            },
+            complete: function(xhr) {
+                if (200 === xhr.status) {
+                    var votes_list = eval('(' + xhr.responseText + ')')[0];
+                    if (2 === votes_list[0]) {
+                        for (var vote = 1; vote < 5; vote++) {
+                            $('#vote-btn5-' + votes_list[vote])
+                                .html('已投<i class="layui-icon">&#xe605;</i>')
+                                .removeClass('layui-btn-normal');
+                        }
+                        groups_list.$data.btn1 = false;
+                        groups_list.$data.btn2 = false;
+                        groups_list.$data.btn3 = false;
+                        groups_list.$data.btn4 = false;
+                    }
+                    else {
+                        for (var vote = 1; vote < 5; vote++) {
+                            $('#vote-btn' + vote + '-' + votes_list[vote])
+                                .html('已投<i class="layui-icon">&#xe605;</i>')
+                                .removeClass('layui-btn-normal');
+                        }
+                        groups_list.$data.btn5 = false;
+                    }
+                }
+                else if (404 === xhr.status)
+                    alert('投票链接非法！');
+                else
+                    alert('未知错误，请稍后重试');
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>

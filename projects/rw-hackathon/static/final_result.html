@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>投票结果 - 软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+  <style>
+    div.group {
+      padding: 10px 0;
+      font-size: 18px;
+    }
+    b.group-name {
+      font-size: 20px;
+    }
+    span.point {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="site-section" id="top5">
+  <div class="layui-container">
+    <h2>排名前5的的参赛队伍</h2>
+    <div class="group" v-for="top in tops">
+      <b class="group-name">{{ top.group_name }}</b> <span class="point">{{ top.point }}</span>票
+      <div class="layui-progress layui-progress-big">
+        <div class="layui-progress-bar layui-bg-blue" v-bind:lay-percent="top.per + '%'"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="site-section" id="best4">
+  <div class="layui-container">
+    <h2>最...的作品</h2>
+    <div class="group">
+      最有趣：<b class="group-name">{{ best1 }}</b> <span class="point">{{ point1 }}</span>“最有趣”票
+    </div>
+    <div class="group">
+      技术最牛：<b class="group-name">{{ best2 }}</b> <span class="point">{{ point2 }}</span>“技术最牛”票
+    </div>
+    <div class="group">
+      工程上最有用：<b class="group-name">{{ best3 }}</b> <span class="point">{{ point3 }}</span>“工程上最有用”票
+    </div>
+    <div class="group">
+      最有创意：<b class="group-name">{{ best4 }}</b> <span class="point">{{ point4 }}</span>“最有创意”票
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script>
+  var url_final_res = '//10.233.66.10:8080/final_res';
+
+  //注意进度条依赖 element 模块，否则无法进行正常渲染和功能性操作
+  layui.use('element', function(){
+      var element = layui.element;
+  });
+  var top5 = new Vue({
+      el: '#top5',
+      data: {
+          tops: [
+              {group_name: '1', point: '23', per: '70'},
+              {group_name: '2', point: '43', per: '10'},
+              {group_name: '3', point: '33', per: '30'},
+              {group_name: '4', point: '11', per: '20'}
+          ]
+      }
+  });
+  var best4 = new Vue({
+      el: '#best4',
+      data: {
+          best1: '1',
+          best2: '2',
+          best3: '3',
+          best4: '4',
+          point1: '5',
+          point2: '6',
+          point3: '7',
+          point4: '8'
+      }
+  });
+  function update() {
+      $.ajax({
+          url: url_final_res,
+          xhrFields: {
+              withCredentials: true
+          },
+          async: false,
+          complete: function(xhr) {
+              if (200 === xhr.status) {
+                  var data = eval('(' + xhr.responseText + ')');
+                  top5.$data.tops = data['top5'];
+                  best4.$data.best1 = data['best4'][0][0];
+                  best4.$data.best2 = data['best4'][1][0];
+                  best4.$data.best3 = data['best4'][2][0];
+                  best4.$data.best4 = data['best4'][3][0];
+                  best4.$data.point1 = data['best4'][0][1];
+                  best4.$data.point2 = data['best4'][1][1];
+                  best4.$data.point3 = data['best4'][2][1];
+                  best4.$data.point4 = data['best4'][3][1];
+              }
+              else
+                  alert('加载信息错误，请稍后重试');
+          }
+      });
+      layui.use('element', function(){
+          var element = layui.element;
+          element.render('progress');
+      });
+      setTimeout('update()', 1000);
+  }
+  update();
+
+</script>
+
+
+</body>
+</html>

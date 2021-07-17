@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>参观 - 软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="layui-header layui-bg-black">
+  <div class="layui-container">
+    <a class="logo" href="index.html">软为Hackathon</a>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a>参赛</a>
+        <dl class="layui-nav-child">
+          <dd><a href="register.html">我要报名</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="!logged" href="login.html">登录</a></dd>
+          <dd><a v-if="logged" class="group_name">{{ group_name }}</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="logged" href="my_group.html">团队信息</a></dd>
+          <dd><a v-if="logged" onclick="logout()">注销</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="visit.html">参观</a></li>
+    </ul>
+  </div>
+</header>
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>比赛题目</h2>
+      <p>此次软为黑客松题目说明如下：</p>
+      <p>比赛共提供三个创作方向，即<b>“一个主题” + “两个Idea”</b>，大家可以根据自己的意愿选择最合适的一个方向进行创作(<b>三选一</b>)，具体内容见下方折叠面板。</p>
+      <p>
+        “一个主题”可以给大家提供一个相对自由的创作空间，更少的限制是为了产生更多的创意。
+        <br>
+        “两个Idea”是依据目前已有的创新型应用或技术而提出的，围绕它们创作相对缺少自由但富有挑战性，而且这可能更接近实际生产的情况。
+        尝试他们，会有不一样的体验。
+      </p>
+      <p>不同的方向侧重点不同，目的是让各种风格的团队能更充分地参与。它们并没有高低之分，高低只在于作品本身。各创作方向详细说明见下方<b>三个折叠面板</b></p>
+      <div class="layui-collapse" lay-accordion>
+        <div class="layui-colla-item">
+          <h3 class="layui-colla-title">方向一：<b>Kill Time</b>（主题）</h3>
+          <div class="layui-colla-content">
+            <p><b>完成一个能够杀死时间的作品</b></p>
+            <p><b>简介：</b></p>
+            <ol>
+              <li>应用不都是“有用”的，就好像代码不都是能挣钱的一样，有些应用看起来就没有什么用，或者说他们主要的用处就是Kill Time。</li>
+              <li>旁人用起来可能觉得很无聊，但是我们创作它们却充满乐趣。在完全非功利的环境下，我们可以在作品中融入自己的思想，激发自己的创造力，任想象延展...</li>
+              <li>软件创作，不只是程序员谋生的手段，也是我们娱乐自己的方式。</li>
+            </ol>
+            <p><b>要求：</b></p>
+            <ol>
+              <li>1. 完成一个起码能跑的应用，且其bug应该尽量难于察觉；</li>
+              <li>2. 它的确能“杀死时间”；</li>
+              <li>3. 形式不限，它可以是游戏、Web应用、APP、控制台程序、...</li>
+              <li>4. 它有趣，起码你们团队要觉得有趣。（应该把你们的思想写在项目介绍文档中）</li>
+            </ol>
+          </div>
+        </div>
+        <div class="layui-colla-item">
+          <h3 class="layui-colla-title">方向二：<b>区块链与智能合约</b>（Idea 1）</h3>
+          <div class="layui-colla-content">
+            <p><b>利用区块链技术实现一个智能合约</b></p>
+            <p><b>简介：</b></p>
+            <ol>
+              <li>以太坊是一个开源的有智能合约功能的公共区块链平台。基于通过以太坊构建的网络和智能合约语言，我们可以实现各种各样的贴近生活的分布式应用（DApp）。</li>
+              <li>当下，数字货币炒作及部分对ICO项目的投资火爆，很多项目正是利用人们对区块链、智能合约的不理解产生的“信息不对称”，来实现让大家乖乖交出自己ETH的目的的。</li>
+              <li>其实，基于以太坊实现一个智能合约并不困难，通过数小时的学习（查阅相关资料、思考），你就有能力完成一个拥有简单功能的智能合约，如投票、众筹等。</li>
+              <li>所以你们可以尝试一下...</li>
+            </ol>
+            <p><b>要求：</b></p>
+            <ol>
+              <li>1. 运用区块链技术</li>
+              <li>2. 完成一个具有实际功能的智能合约项目</li>
+              <li>3. 如果无法完成，也可以以文字形式介绍自己的想法，阐述自己关于如何实现智能合约的构思，分享技术</li>
+            </ol>
+        </div>
+        </div>
+        <div class="layui-colla-item">
+          <h3 class="layui-colla-title">方向三：<b>自建RPC</b>（Idea 2）</h3>
+          <div class="layui-colla-content">
+            <p><b>设计并实现一个简单的RPC协议</b></p>
+            <p><b>简介：</b></p>
+            <ol>
+              <li>RPC（Remote Procedure Call）- 远程过程调用，是一种通过网络向远程计算机程序请求服务，而不需要了解底层网络技术的协议。</li>
+              <li>目前，在分布式、云计算快速发展的背景下，RPC几乎无处不在。许多互联网公司都有自己实现的rpc框架。</li>
+              <li>你们也可以尝试实现一个，而且我们的要求很简单...</li>
+            </ol>
+            <p><b>要求：</b></p>
+            <ol>
+              <li>1. 设计一个二进制的基于TCP的RPC协议，妥善处理诸如粘包、分包等常见问题</li>
+              <li>2. 实现简单的远程调用功能，调用方传入方法或函数名、函数参数，被调用方能回传调用结果、错误栈信息或异常信息</li>
+              <li>3. 被调用方必须能并行处理远程调用</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <p><b>作品提交要求：</b></p>
+      <ol>
+        <li>1. 项目打包在一个文件夹中于规定时间内通过QQ答疑群提交；</li>
+        <li>2. 项目必须包含适量的文档，项目文件夹根目录须有`README.md`文件，并在其中对项目做简要介绍；</li>
+        <li>3. 准纪守法，严禁一切形式的侵权。</li>
+      </ol>
+      <p><b>一个声明：</b></p>
+      <p>
+        本着竞赛公平公开公正的原则，以及我们信奉的开源精神。我们希望所有作品的源代码都在GitHub上开源，以便于大家学习。
+        大家可以适时将代码上传到GitHub，并选择合适的开源许可证。
+        所有参赛作品的版权由其原作者持有，软为黑客马拉松主办方不对此占有任何权益。
+      </p>
+    </div>
+  </div>
+</section>
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>投票</h2>
+      <p>投票将于2018.04.06 20:00各参赛队伍上交作品后开始（提前的投票都将被清零，但提前送出的投票链接仍然有效）。</p>
+      <p>现在您可以先浏览以下已经报名参赛的队伍。</p>
+      <p>投票开始后，您可以为您认为优秀的团队投出一票，得票最高的团队将获得“人气奖”。</p>
+      <p>如需投票，请在以下输入框中输入您的邮箱，并发送。</p>
+      <div class="layui-row">
+        <div class="layui-col-md4 layui-col-sm6">
+          <form class="layui-form">
+            <div class="site-input-inline">
+              <input id="input-email" type="email" required placeholder="请输入您的邮箱" autocomplete="off" class="layui-input">
+              <button id="submit-btn" type="button" class="layui-btn" onclick="send_email()">发送</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p>我们会将带有唯一标识的投票链接发送到您的邮箱，您可以访问该链接进行投票。</p>
+      <p>每个邮箱只能投出3票，重复点击投票按钮可以 投票/取消投票。</p>
+      <p>在最终计票前，你可以通过投票链接随时修改您的选择。</p>
+    </div>
+  </div>
+</section>
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>参赛团队</h2>
+      <div id="groups_list">
+        <fieldset class="layui-elem-field" v-for="group in groups">
+          <legend>{{ group.group_name }}（{{ group.grade }}）</legend>
+          <div class="layui-field-box">
+            <p style="word-break: break-all"><span>成员：</span><span>{{ group.members }}</span></p>
+            <p style="word-break: break-all"><span>作品名：</span><span>{{ group.work_name }}</span></p>
+            <p style="word-break: break-all"><span>作品简介：</span><span>{{ group.work_description }}</span></p>
+            <button v-bind:id="'vote-btn-' + group.group_id" class="layui-btn layui-btn-normal" v-bind:class="{'layui-hide': !has_token}" v-bind:onclick="'vote(\'' + group.group_id + '\')'">为该队投票</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script src="./js/main.min.js"></script>
+<script src="./js/visit.min.js"></script>
+
+
+</body>
+</html>

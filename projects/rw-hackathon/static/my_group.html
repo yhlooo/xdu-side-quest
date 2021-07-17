@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>我的团队 - 软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="layui-header layui-bg-black">
+  <div class="layui-container">
+    <a class="logo" href="index.html">软为Hackathon</a>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a>参赛</a>
+        <dl class="layui-nav-child">
+          <dd><a href="register.html">我要报名</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="!logged" href="login.html">登录</a></dd>
+          <dd><a v-if="logged" class="group_name">{{ group_name }}</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="logged" href="my_group.html">团队信息</a></dd>
+          <dd><a v-if="logged" onclick="logout()">注销</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="visit.html">参观</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>我的团队</h2>
+      <p>填写以下信息，他们的一部分会被公开，让大家更了解你们团队</p>
+      <p>这些信息是可以被随时更改的</p>
+    </div>
+  </div>
+</section>
+
+<section class="site-section" id="group_info">
+  <div class="layui-container">
+    <div class="layui-row">
+      <div class="layui-col-lg6">
+        <fieldset class="layui-elem-field">
+          <legend>团队信息</legend>
+          <div class="layui-field-box">
+            <div class="layui-fluid">
+              <p style="word-break: break-all"><span>团队ID：</span><span>{{ group_id }}</span></p>
+              <p style="word-break: break-all"><span>队名：</span><span>{{ group_name }}</span></p>
+              <p style="word-break: break-all"><span>邮箱：</span><span>{{ email }}</span></p>
+              <p style="word-break: break-all"><span>年级：</span><span>{{ grade }}</span></p>
+              <p style="word-break: break-all"><span>成员：</span><span>{{ members }}</span></p>
+              <p style="word-break: break-all"><span>作品名：</span><span>{{ work_name }}</span></p>
+              <p style="word-break: break-all"><span>作品简介：</span><span>{{ work_description }}</span></p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="layui-elem-field">
+          <legend>修改团队详细信息</legend>
+          <div class="layui-field-box">
+            <form id="form_detail" class="layui-form">
+              <div class="layui-form-item">
+                <label class="layui-form-label">成员列表</label>
+                <div class="layui-input-block">
+                  <input type="text" id="form-detail-members" required placeholder="依次输入团队成员姓名，多个姓名用逗号分隔" title="依次输入团队成员姓名，多个姓名用逗号分隔" autocomplete="off" class="layui-input" v-bind:value="members">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">作品名</label>
+                <div class="layui-input-block">
+                  <input type="text" id="form-detail-work_name" required placeholder="尽量起一个有趣的名字" title="尽量起一个有趣的名字" autocomplete="off" class="layui-input" v-bind:value="work_name">
+                </div>
+              </div>
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">作品简介</label>
+                <div class="layui-input-block">
+                  <textarea id="form-detail-work_description" placeholder="关于作品的简要介绍" class="layui-textarea">{{ work_description }}</textarea>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button type="button" class="layui-btn" lay-submit lay-filter="form_login" onclick="detail()">提交</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script src="./js/main.min.js"></script>
+<script src="js/my_group.min.js"></script>
+
+
+</body>
+</html>

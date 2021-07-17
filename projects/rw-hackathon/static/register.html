@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>报名 - 软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="layui-header layui-bg-black">
+  <div class="layui-container">
+    <a class="logo" href="index.html">软为Hackathon</a>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a>参赛</a>
+        <dl class="layui-nav-child">
+          <dd><a href="register.html">我要报名</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="!logged" href="login.html">登录</a></dd>
+          <dd><a v-if="logged" class="group_name">{{ group_name }}</a></dd>
+          <hr v-if="logged">
+          <dd><a v-if="logged" href="my_group.html">团队信息</a></dd>
+          <dd><a v-if="logged" onclick="logout()">注销</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="visit.html">参观</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="site-section">
+  <div class="layui-container">
+    <div>
+      <h2>报名参赛</h2>
+      <p>参加清明“软为”黑客马拉松，请先在此报名</p>
+      <p>报名截止日期：2018.04.06 20:00</p>
+      <p>请在规定时间内提交报名</p>
+    </div>
+  </div>
+</section>
+
+<section class="site-section">
+  <div class="layui-container">
+    <div class="layui-row">
+      <div class="layui-col-lg6">
+        <fieldset class="layui-elem-field">
+          <legend>填写报名信息</legend>
+          <div class="layui-field-box">
+            <form id="form_register" class="layui-form">
+              <div class="layui-form-item">
+                <label class="layui-form-label">队名</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="form-register-group_name" required  lay-verify="required" placeholder="尽量起一个有趣的名字" title="尽量起一个有趣的名字" autocomplete="off" class="layui-input" onblur="form_check_group_name()">
+                </div>
+                <div class="layui-form-mid layui-word-aux"><span v-bind:class="{ok: is_ok, error: is_error}">{{ group_name_tip }}</span></div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">年级</label>
+                <div class="layui-input-block">
+                  <input type="radio" id="form_register-grade1" name="grade" value="1" title="大一" checked>
+                  <input type="radio" id="form_register-grade2" name="grade" value="2" title="大二">
+                  <input type="radio" id="form_register-grade3" name="grade" value="2" title="大三">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                  <input type="email" id="form-register-email" required  lay-verify="required" placeholder="团队负责人邮箱" title="请输入您的团队负责人的邮箱" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                  <input type="password" id="form-register-password" required lay-verify="required" placeholder="请设置登录密码" title="请设置登录密码" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">重复密码</label>
+                <div class="layui-input-block">
+                  <input type="password" id="form-register-reenter_password" required lay-verify="required" placeholder="请您重复您设置的密码" title="请您重复您设置的密码" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item error" style="padding: 0 40px;">
+                {{ form_tip }}
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button type="button" class="layui-btn" lay-submit lay-filter="form_login" onclick="register()">提交</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script src="./js/main.min.js"></script>
+<script src="./js/register.min.js"></script>
+
+
+</body>
+</html>

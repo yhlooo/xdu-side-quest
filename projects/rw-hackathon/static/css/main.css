@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* serif sans-serif cursive fantasy monospace */
+    /*font-family: fantasy;*/
+}
+section.site-section {
+    padding: 30px 0;
+}
+
+.logo {
+    position: absolute;
+    top: 13px;
+    color: #e1e1e1;
+    font-size: 22px;
+}
+.group_name, .group_name:hover {
+    color: #000000;
+    font-size: 120%;
+    /*font-weight: bold;*/
+}
+
+div.layui-form-mid.layui-word-aux span.ok {
+    color: #5fb878;
+}
+div.layui-form-mid.layui-word-aux span.error, .error {
+    color: #ff5722;
+}
+header.layui-header.layui-bg-black.index {
+    background-color: transparent;
+}
+
+
+.layui-header {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.layui-nav {
+    background-color: transparent;
+}
+header.site-header {
+    background-image: url("../img/index_bg.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+div.site-banner {
+    padding: 80px 0;
+}
+div.site-banner h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+div.site-banner p {
+    color: #e6e6e6;
+}
+div.site-banner a {
+    color: #ffffff;
+}
+section.site-section.index {
+    padding: 50px 0;
+    border: solid #f0f0f0;
+    border-width: 0 0 1px 0;
+}
+section.site-section.index ul {
+    margin: 20px 0;
+}
+section.site-section.index li {
+    margin-bottom: 5px;
+}
+section.site-section.index li i.li-dec{
+    color: #145a96;
+    font-size: 80%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+div.logo-show {
+    margin-top: 40px;
+}
+img.main-logo {
+    width: 100%;
+}
+div.top-btn {
+    width: 50px;
+    height: 44px;
+    margin: 20px;
+    padding: 3px 0;
+    border: 2px solid #969696;
+    border-radius: 50%;
+    text-align: center;
+    color: #969696;
+}
+div.top-btn i {
+    font-size: 40px;
+}
+div.site-input-inline {
+    margin: 20px 0;
+}
+div.site-input-inline input {
+    width: calc(100% - 90px);
+    display: inline;
+}
+div.site-input-inline button {
+    display: inline;
+}
+@media(max-width: 700px) {
+    div.site-banner {
+        text-shadow: 0 0 5px #000000;
+    }
+    div.site-banner h1 {
+        font-size: 35px;
+    }
+    div.site-banner p {
+        font-size: 14px;
+    }
+    section.site-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    section.site-section p {
+        font-size: 14px;
+        line-height: 200%;
+    }
+    /*label.layui-form-label {*/
+        /*text-align: left;*/
+    /*}*/
+}
+@media(min-width: 700px) {
+    div.site-banner {
+        text-shadow: 2px 2px 5px #000000;
+    }
+    div.site-banner h1 {
+        font-size: 50px;
+    }
+    div.site-banner p {
+        font-size: 18px;
+    }
+    section.site-section h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    section.site-section p {
+        font-size: 16px;
+        line-height: 200%;
+    }
+}
+
+
+
+

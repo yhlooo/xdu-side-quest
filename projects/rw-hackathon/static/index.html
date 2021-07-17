@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>软为Hackathon</title>
+  <!-- CSS -->
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="site-header">
+  <div class="layui-header">
+    <div class="layui-container">
+      <a class="logo" href="index.html">软为Hackathon</a>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a>参赛</a>
+          <dl class="layui-nav-child">
+            <dd><a href="register.html">我要报名</a></dd>
+            <hr v-if="logged">
+            <dd><a v-if="!logged" href="login.html">登录</a></dd>
+            <dd><a v-if="logged" class="group_name">{{ group_name }}</a></dd>
+            <hr v-if="logged">
+            <dd><a v-if="logged" href="my_group.html">团队信息</a></dd>
+            <dd><a v-if="logged" onclick="logout()">注销</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="visit.html">参观</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-banner">
+    <div class="layui-container">
+      <h1>“软为”Hackathon</h1>
+      <p><a href="http://portal.helloyzy.cn/" target="_blank">为之工作室</a> | <a href="http://sssta.org/" target="_blank">软院科协</a> 共同主办</p>
+      <p><a href="http://www.whalefoundation.cn/" target="_blank">深圳市海鲸基金会</a> 赞助</p>
+    </div>
+  </div>
+</header>
+
+<section class="site-section index">
+  <div class="layui-container">
+    <h2>关于比赛</h2>
+    <p>在计算机软件行业快速发展的今天，你正在技术的漩涡中艰难前行，你是否渴望一场比赛来证明自己，期待一个高手云集的技术交流平台来提升自己？</p>
+    <p>今天你就有这样一个机会...</p>
+    <p>带上你的伙伴，共战“软为”黑客松！</p>
+    <p>　</p>
+    <p>
+      本次“软为”黑客马拉松活动由
+      <a href="http://sssta.org/" target="_blank"><b>软院科协</b></a>
+      与<a href="http://portal.helloyzy.cn/" target="_blank"><b>为之工作室</b></a>
+      共同主办，
+      由<a href="http://www.whalefoundation.cn/" target="_blank"><b>深圳市海鲸基金会</b></a>赞助，
+      参赛者在规定时间内依据规定的命题，从0到1创作一款完整的作品。我们将并对作品进行评奖，发放奖品
+    </p>
+    <div class="layui-row logo-show">
+      <div class="layui-col-sm1 layui-col-sm-offset1 layui-col-xs2 layui-col-xs-offset1"><img class="main-logo" src="//sssta-web.oss-cn-shenzhen.aliyuncs.com/rw/img/sssta.png"></div>
+      <div class="layui-col-sm1 layui-col-xs2 layui-col-xs-offset1"><img class="main-logo" src="//sssta-web.oss-cn-shenzhen.aliyuncs.com/rw/img/wz.png"></div>
+      <div class="layui-col-sm1 layui-col-xs2 layui-col-xs-offset1"><img class="main-logo" src="//sssta-web.oss-cn-shenzhen.aliyuncs.com/rw/img/hj.png"></div>
+    </div>
+  </div>
+</section>
+
+<section class="site-section index">
+  <div class="layui-container">
+    <h2>比赛流程</h2>
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">准备</li>
+        <li>创作</li>
+        <li>尾声</li>
+      </ul>
+      <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+          <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.03.25 预热</h3>
+                <p>
+                  寻求组队，了解活动详情
+                  <br>关于该活动的信息都会在该网站展示
+                  <br>同时，我们有QQ答疑群，更多详细内容欢迎加群讨论
+                  <br>QQ答疑群：<span style="color: #000000; font-size: 16px;">软为清明黑客松（578076813）</span>
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">现在 开始报名</h3>
+                <p>
+                  当你看见这个网站，你已经可以开始报名了
+                  <br>大家以团队为单位在该网站报名页面（点击页面顶部右上方 “参赛” -> “我要报名”）进行登记报名
+                  <br>报名完成后可以登录自己的团队修改团队部分详细信息
+                  <br>部分信息将被展示在“参观”页面
+                  <br>报名截止时间：2018.04.06 20:00
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.03.31 公布题目</h3>
+                <p>
+                  我们将会在QQ答疑群和当前页面显著位置公示比赛题目
+                  <br>我们会给出三个创作方向，大家可以选择这三个方向中的一个进行创作
+                  <br>大家可以开始选定题目，发挥想象，构思项目，组织分工
+                  <br>届时，对于题目有任何疑问可以在QQ答疑群讨论或咨询
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.04 作品实现</h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="layui-tab-item">
+          <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.04 作品实现</h3>
+                <p>
+                  大家可以开始按照团队计划开始实现自己的作品
+                  <br>该阶段时间有48小时，注意适当休息
+                  <br>有任何疑问可以在QQ答疑群交流或咨询
+                  <br>创作时间：2018.04.04 20:00 ~ 2018.04.06 20:00
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.06 上交作品</h3>
+                <p>
+                  上交截止时间：2018.04.06 20:00
+                  <br>各参赛队伍应该在上述截止时间前通过QQ答疑群上交作品
+                  <br>逾期将视为放弃比赛
+                  <br>我们将在截止时间前120分钟在QQ答疑群发布提醒
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.06 进入评审</h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="layui-tab-item">
+          <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.06 ~ 07 初审</h3>
+                <p>
+                  2018.04.06 20：00 ~ 2018.04.07 06：00
+                  <br>我们将对上交的作品进行初审，推出12个入围作品
+                  <br>并通知相关团队到会场现场展示
+                  <br>对于结果的疑问可以在QQ答疑群咨询
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">2018.04.07 终局</h3>
+                <p>
+                  2018.04.07 09:00
+                  <br>我们将组织上述12个团队现场展示作品，并评审，颁奖
+                  <br>获奖信息将通过多种途径发布
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3><b>重中之重</b> -- QQ答疑群：<span style="color: #000000; font-size: 16px;">软为清明黑客松（578076813）</span></h3>
+  </div>
+</section>
+
+<section class="site-section index">
+  <div class="layui-container">
+    <h2>比赛题目</h2>
+    <p>此次软为黑客松题目说明如下：</p>
+    <p>比赛共提供三个创作方向，即<b>“一个主题” + “两个Idea”</b>，大家可以根据自己的意愿选择最合适的一个方向进行创作(<b>三选一</b>)，具体内容见下方折叠面板。</p>
+    <p>
+      “一个主题”可以给大家提供一个相对自由的创作空间，更少的限制是为了产生更多的创意。
+      <br>
+      “两个Idea”是依据目前已有的创新型应用或技术而提出的，围绕它们创作相对缺少自由但富有挑战性，而且这可能更接近实际生产的情况。
+      尝试他们，会有不一样的体验。
+    </p>
+    <p>不同的方向侧重点不同，目的是让各种风格的团队能更充分地参与。它们并没有高低之分，高低只在于作品本身。各创作方向详细说明见下方<b>三个折叠面板</b></p>
+    <div class="layui-collapse" lay-accordion>
+      <div class="layui-colla-item">
+        <h3 class="layui-colla-title">方向一：<b>Kill Time</b>（主题）</h3>
+        <div class="layui-colla-content">
+          <p><b>完成一个能够杀死时间的作品</b></p>
+          <p><b>简介：</b></p>
+          <ol>
+            <li>应用不都是“有用”的，就好像代码不都是能挣钱的一样，有些应用看起来就没有什么用，或者说他们主要的用处就是Kill Time。</li>
+            <li>旁人用起来可能觉得很无聊，但是我们创作它们却充满乐趣。在完全非功利的环境下，我们可以在作品中融入自己的思想，激发自己的创造力，任想象延展...</li>
+            <li>软件创作，不只是程序员谋生的手段，也是我们娱乐自己的方式。</li>
+          </ol>
+          <p><b>要求：</b></p>
+          <ol>
+            <li>1. 完成一个起码能跑的应用，且其bug应该尽量难于察觉；</li>
+            <li>2. 它的确能“杀死时间”；</li>
+            <li>3. 形式不限，它可以是游戏、Web应用、APP、控制台程序、...</li>
+            <li>4. 它有趣，起码你们团队要觉得有趣。（应该把你们的思想写在项目介绍文档中）</li>
+          </ol>
+        </div>
+      </div>
+      <div class="layui-colla-item">
+        <h3 class="layui-colla-title">方向二：<b>区块链与智能合约</b>（Idea 1）</h3>
+        <div class="layui-colla-content">
+          <p><b>利用区块链技术实现一个智能合约</b></p>
+          <p><b>简介：</b></p>
+          <ol>
+            <li>以太坊是一个开源的有智能合约功能的公共区块链平台。基于通过以太坊构建的网络和智能合约语言，我们可以实现各种各样的贴近生活的分布式应用（DApp）。</li>
+            <li>当下，数字货币炒作及部分对ICO项目的投资火爆，很多项目正是利用人们对区块链、智能合约的不理解产生的“信息不对称”，来实现让大家乖乖交出自己ETH的目的的。</li>
+            <li>其实，基于以太坊实现一个智能合约并不困难，通过数小时的学习（查阅相关资料、思考），你就有能力完成一个拥有简单功能的智能合约，如投票、众筹等。</li>
+            <li>所以你们可以尝试一下...</li>
+          </ol>
+          <p><b>要求：</b></p>
+          <ol>
+            <li>1. 运用区块链技术</li>
+            <li>2. 完成一个具有实际功能的智能合约项目</li>
+            <li>3. 如果无法完成，也可以以文字形式介绍自己的想法，阐述自己关于如何实现智能合约的构思，分享技术</li>
+          </ol>
+        </div>
+      </div>
+      <div class="layui-colla-item">
+        <h3 class="layui-colla-title">方向三：<b>自建RPC</b>（Idea 2）</h3>
+        <div class="layui-colla-content">
+          <p><b>设计并实现一个简单的RPC协议</b></p>
+          <p><b>简介：</b></p>
+          <ol>
+            <li>RPC（Remote Procedure Call）- 远程过程调用，是一种通过网络向远程计算机程序请求服务，而不需要了解底层网络技术的协议。</li>
+            <li>目前，在分布式、云计算快速发展的背景下，RPC几乎无处不在。许多互联网公司都有自己实现的rpc框架。</li>
+            <li>你们也可以尝试实现一个，而且我们的要求很简单...</li>
+          </ol>
+          <p><b>要求：</b></p>
+          <ol>
+            <li>1. 设计一个二进制的基于TCP的RPC协议，妥善处理诸如粘包、分包等常见问题</li>
+            <li>2. 实现简单的远程调用功能，调用方传入方法或函数名、函数参数，被调用方能回传调用结果、错误栈信息或异常信息</li>
+            <li>3. 被调用方必须能并行处理远程调用</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <p><b>作品提交要求：</b></p>
+    <ol>
+      <li>1. 项目打包在一个文件夹中于规定时间内通过QQ答疑群提交；</li>
+      <li>2. 项目必须包含适量的文档，项目文件夹根目录须有`README.md`文件，并在其中对项目做简要介绍；</li>
+      <li>3. 准纪守法，严禁一切形式的侵权。</li>
+    </ol>
+    <p><b>一个声明：</b></p>
+    <p>
+      本着竞赛公平公开公正的原则，以及我们信奉的开源精神。我们希望所有作品的源代码都在GitHub上开源，以便于大家学习。
+      大家可以适时将代码上传到GitHub，并选择合适的开源许可证。
+      所有参赛作品的版权由其原作者持有，软为黑客马拉松主办方不对此占有任何权益。
+    </p>
+  </div>
+</section>
+
+<section class="site-section index">
+  <div class="layui-container">
+    <h2>奖品</h2>
+    <p>比赛奖品由<a href="http://www.whalefoundation.cn/" target="_blank"><b>深圳市海鲸基金会</b></a>赞助提供</p>
+    <ul>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>一等奖（一组）：1000元代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>二等奖（一组）：500元代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>三等奖（三组）：200元代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>参与奖（十二强 + 人气组）：每个组员一张限量纪念明信片<i class="layui-icon">&#xe650;</i></li>
+    </ul>
+  </div>
+</section>
+
+<section class="site-section index" style="border: 0;">
+  <div class="layui-container">
+    <h2>比赛赞助</h2>
+    <p>该活动由<a href="http://www.whalefoundation.cn/" target="_blank"><b>深圳市海鲸基金会</b></a>赞助举办</p>
+  </div>
+</section>
+<div class="layui-container layui-hide-sm">
+  <div class="layui-layout-right"><a href="#"><div class="top-btn"><i class="layui-icon">&#xe604;</i></div></a></div>
+</div>
+
+<section class="site-section index">
+  <div class="layui-container">
+    <h2>奖品</h2>
+    <p>比赛奖品由<a href="http://www.whalefoundation.cn/" target="_blank"><b>深圳市海鲸基金会</b></a>赞助提供</p>
+    <ul>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>一等奖（一组）：1000元京东代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>二等奖（一组）：500元京东代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>三等奖（三组）：200元京东代金券</li>
+      <li><i class="layui-icon li-dec">&#xe64e;</i>参与奖（十二强 + 人气组）：每个组员一张限量纪念明信片<i class="layui-icon">&#xe650;</i></li>
+    </ul>
+  </div>
+</section>
+
+<section class="site-section index" style="border: 0;">
+  <div class="layui-container">
+    <h2>比赛赞助</h2>
+    <p>该活动由<a href="http://www.whalefoundation.cn/" target="_blank"><b>深圳市海鲸基金会</b></a>赞助举办</p>
+  </div>
+</section>
+<div class="layui-container layui-hide-sm">
+  <div class="layui-layout-right"><a href="#"><div class="top-btn"><i class="layui-icon">&#xe604;</i></div></a></div>
+</div>
+
+<!-- JavaScript -->
+<script src="./js/vue.min.js"></script>
+<script src="./layui/layui.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/main.min.js"></script>
+
+</body>
+</html>
