@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/icon.png" rel="icon ">
+  <title>Surprised!</title>
+  <!-- Bootstrap -->
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/main.min.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-inverse title">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand title" href="//www.sssta.org/index.html"><img src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/nav-icon.png" height="32" width="100"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="//www.sssta.org/test.html">小测试</a></li>
+          <li><a href="//www.sssta.org/groups_introduce.html">分组介绍</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="//www.sssta.org/join_us.html">加入我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="jumbotron" style="background-image: url(//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/glass_black.png);background-repeat: no-repeat;background-position: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6">
+        <h1>Surprised!</h1>
+        <p>这或许就是你们喜闻乐见的彩蛋？</p>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <form action="//39.108.75.56:8080/surprise" method="post">
+        <!--<form action="//localhost:8080/surprise" method="post">-->
+        <div class="form-group">
+            <label>姓名</label>
+            <input name="name" type="text" class="form-control" placeholder="Name" id="name" oninput="submit_check('oninput')">
+          </div>
+          <div class="form-group">
+            <label>题号<small class="hidden" style="color: red;" id="key_unsigned">（你在逗我吗，根本就没有这题）</small></label>
+            <input name="key" type="text" class="form-control" placeholder="Key" id="key" onfocus="submit_check('onfocus')" onblur="submit_check('onblur')" oninput="submit_check('oninput')">
+          </div>
+          <label>答案</label>
+          <div class="input-group">
+            <input name="value" type="text" class="form-control" placeholder="Value" id="value" oninput="submit_check('oninput')">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" id="submit" disabled>提交</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>以下是一些有趣的题目，做出来似乎有奖哦 (☆_☆)</h2>
+    <p>
+      以下一共有三大题，主要为了考察大家的基础的知识、学习的能力和钻研的热情。题目由浅入深，完成相应题目能获得相应BUFF，
+      答错和多次答题并不会有DEBUFF，所以大家可以放心尝试、发挥想象力并充分利用各种资源。
+    </p>
+    <p>
+      按照每题所给提示完成其任务，理论上你应该会得到一个看起来挺漂亮的<b>字符串</b>，
+      将其题号和所得字符串如下图所示填入上方表单中提交即可看到答题结果。答题顺序任意，当然我们建议你从简单的开始（相信自己，
+      万一你能直接蒙对最后一题呢）
+    </p>
+    <br>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 hidden-xs">
+        <img class="img-responsive" src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/surprise_example1.png">
+        <em><small>*上图为输入样例</small></em>
+      </div>
+      <div class="col-xs-12 visible-xs">
+        <img class="img-responsive" src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/surprise_example0.png">
+        <em><small>*上图为输入样例</small></em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>题号：0</h2>
+    <p>
+      以下是一段C语言的代码。虽然它看起来一无是处，但是它的作者执着地认为只要稍加改进它将有潜力成为一个“文件保险柜”，用于存放<b>机密信息。</b>
+    </p>
+    <p>
+      你可以试着将这段代码拷贝进你通常用于写代码的地方并用你通常的方法运行它（当然不排除你在草稿纸上运行它）。如果使用得当，
+      你应该能得到里面的机密信息，那就是这题的答案。
+    </p>
+    <p>
+      它的作者特别提醒道“看哪，它和你见过的所有保险柜没有不同，都需要<b>用密码开启</b>”
+    </p>
+    <pre class="prettyprint lang-c">
+// Designed by Keyboard.
+#include &lt;stdio.h&gt;
+void BubbbleSort(int *data,int n);
+
+int main()
+{
+    int key1[7] = {83, 115, 58, 58, 83, 116, 65};
+    int key2[7] = {3, 5, 1, 0, 4, 6, 2};
+    int password;
+    int i;
+
+    // ---你可能会好奇这段在干什么---
+    do {                         // |
+        printf(&quot;Password: G-&quot;);  // |
+        scanf(&quot;%d&quot;, &amp;password);  // |
+    } while (password != 302);   // |
+    // ------------------------------
+
+    BubbbleSort(key1, 7);
+    for(i = 0;i &lt; 7;i++)
+        printf(&quot;%c&quot;, key1[key2[i]]);
+    printf(&quot;\n&quot;);
+    return 0;
+}
+
+void BubbbleSort(int *data,int n)  //冒泡排序
+{
+    int i, j, temp;
+    for (i = n;i &gt; 0;i--) {
+        for (j = 0;j &lt; i - 1;j++) {
+            if (data[j] &gt; data[j+1]) {
+                temp = data[j];
+                data[j] = data[j+1];
+                data[j+1] = temp;
+            }
+        }
+    }
+}
+    </pre>
+    <p>这题真的不难，你看这优雅的代码，合适的缩进、适当的空格还有<b>恰到好处的注释</b></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>题号：1</h2>
+    <p>
+      这是一道比较隐晦的题目。请听题：
+    </p>
+    <p>
+      我们在<a href="http://39.108.75.56:8080/joke">http://39.108.75.56:8080/joke</a>放置了一个关于<b>http</b>的笑话。
+      但是我们都知道程序员的笑点都很奇怪（谁会知道），你可能永远也<b>GET</b>不到其中的奥义。但是软院科协的学长们还是照顾萌新的，
+      只要你<b>GET</b>的时候告诉我们你的<b>identity</b>是<b>freshman</b>，我们就能让你<b>GET</b>到。
+    </p>
+    <p>
+      这题的答案就在那个笑话里，但愿你能get到吧。顺带一说，消失的2.0题也在那个笑话里。
+    </p>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>题号：2.x</h2>
+    <p>
+      2.x系列是有可能获得免试进入科协机会的题目，如果你对题目所述一无所知，你也可以试着去钻研一番，这也许将成为你一段难忘的经历。
+    </p>
+    <h3>2.1</h3>
+    <p>
+      前两题对于你们这些壮志凌云的少年来说肯定是小菜一碟，所以李主席打算请你们喝杯Java。
+      以下是一段Java代码，它很简单，完全可以在脑中运行（我们也不反对你使用编译器编译）。运行时输出的内容即为本题答案。
+      本题将提供三个入口，其中任何<b>一个</b>字符串都可作为答案输入。
+    </p>
+    <p>
+      答案并不重要，重要的是原因，如果你能向学长解释清楚其中的原因，你将获得免试进入科协的资格。（当然，你首先需要回答正确，才能有向学长解释的机会）
+    </p>
+    <pre class="prettyprint lang-java">
+// Designed by tobiaslee.
+public class SSSTA {
+    public void test(Object object) {
+        System.out.println(&quot;SS::STA&quot;);
+    }
+    public void test(String s){
+        System.out.println(&quot;ss::sta&quot;);
+    }
+    static String s1, s0;
+    public static void main(String[] args) {
+        // 入口一
+        SSSTA main = new SSSTA();
+        main.test(null);
+
+        // 入口二
+        String a = &quot;abc&quot;;
+        String b = &quot;ab&quot; + &quot;c&quot; ;
+        System.out.println(a == b);
+
+       	// 入口三
+        s0 = s1 + s0;
+        System.out.println(s0);
+    }
+}
+    </pre>
+    <br>
+    <h3>2.2</h3>
+    <p>你可能不知道，这个世界上存在着一种异常优雅的语言，那就是Python。下面便是一道关于Python的题目</p>
+    <p>
+      以下是一段Python的代码，这段代码产生了两个子线程用两个socket向两个地址发送了http请求并接收响应。
+      但这段代码中存在至少3处bug，导致程序无法正常运行。请找出并改正。如果运行正确，答案将在程序输出的第一行。
+    </p>
+    <p>
+      完成该题，你将获得免试进入科协的机会。但是鉴于该题难度异常的高，所以即使你没有完成，
+      你也可以将你对该题的任何想法发送到邮箱keyboard-l@outlook.com与学长交流。
+    </p>
+    <pre class="prettyprint lang-python">
+# Designed by 叁拾柒.
+import socket
+import threading
+
+sockets = [socket.socket()] * 2
+something = [chr(x) for x in [115, 83, 58, 58, 115, 84, 97, 50, 51, 51]]
+
+
+def get(sock, url):
+    sock.connect((url, 80))
+    sock.send(b&quot;GET / HTTP/1.1\r\n\r\n&quot;)
+    print(sock.recv(1024))
+
+
+threads = [threading.Thread(target=lambda: get(sock, url))
+           for sock, url in zip(sockets, (&quot;www.sssta.org&quot;, &quot;tobiaslee.top&quot;))]
+
+print &#39;&#39;.join(something[:3]),
+
+for i in threads:
+    i.run()
+
+something.insert(7, &#39;呀&#39;)
+print &#39;\b&#39;+&#39;&#39;.join(something[3:8])
+    </pre>
+    <p>你遇到的某些问题可能是由于你使用了Python3.x而非Python2.x的缘故</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-sm-8">
+        <ul class="list-inline">
+          <li><a title="项目前端源代码" href="https://github.com/Keyboard-l/SSSTA-Official-Site">GitHub</a></li>
+          <li><a title="It's a big surprise for you!" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/surprise.html">就是这里</a></li>
+          <li><a title="与dalao谈笑风生" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/contact.html">联系我们</a></li>
+          <li><a title="关于该网站" href="https://github.com/Keyboard-l/SSSTA-Official-Site/blob/master/README.md">关于</a></li>
+        </ul>
+        <br>
+        <p>
+          该网站由软院科协
+          <a href="http://www.three7.cc/"><em>叁拾柒</em></a>
+          和
+          <a href="https://keyboard-l.github.io/myBlog/"><em>Keyboard</em></a>
+          设计。
+        </p>
+        <p>国家211重点高校西安电子科技大学国家示范性<a href="//www.sssta.org/index.html"><em>软件学院科学与技术协会</em></a>全体成员祝您走上人生巅峰。</p>
+      </div>
+      <div class="col-lg-3 col-xs-4">
+        <img class="img-responsive" src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/footer_icon.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/surprise.min.js" rel="script"></script>
+
+<!-- 代码语法高亮 -->
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/prettify.min.js"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/run_prettify.min.js"></script>
+
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/jquery.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/bootstrap.min.js" rel="script"></script>
+</body>
+</html>

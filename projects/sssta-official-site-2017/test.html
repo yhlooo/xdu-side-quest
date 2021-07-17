@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/icon.png" rel="icon ">
+  <title>人生的经验</title>
+  <!-- Bootstrap -->
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/main.min.css" rel="stylesheet">
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/prettify.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-inverse title test">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand title" href="./index.html"><img src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/nav-icon.png" height="32" width="100"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="./test.html">小测试</a></li>
+          <li><a href="./groups_introduce.html">分组介绍</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./join_us.html">加入我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="jumbotron test">
+  <div class="container">
+    <h1>人生的经验</h1>
+    <p>动动你的鼠标或者手指，完成这个测试，看看你喜欢哪个组</p>
+  </div>
+</section>
+
+<!-- 兴趣点 -->
+<section>
+  <div class="container">
+      <h2>兴趣点</h2>
+      <p>请选择以下能引起你兴趣的名词</p>
+      <div>
+        <button type="button" class="btn btn-default" id="android-1.3" onclick="add_one([['android', 2]], 'android-1.3')">棉花糖</button>
+        <button type="button" class="btn btn-default" id="acm-1.1" onclick="add_one([['acm', 1]], 'acm-1.1')">堆</button>
+        <button type="button" class="btn btn-default" id="ha-1.2" onclick="add_one([], 'ha-1.2')">黑框眼镜</button>
+        <button type="button" class="btn btn-default" id="web-1.1" onclick="add_one([['web', 1]], 'web-1.1')">爬虫</button>
+        <button type="button" class="btn btn-default" id="ios-1.4" onclick="add_one([['ios', 2]], 'ios-1.4')">果粉</button>
+        <button type="button" class="btn btn-default" id="game-1.6" onclick="add_one([['game', 1]], 'game-1.6')">开黑</button>
+        <button type="button" class="btn btn-default" id="acm-1.7" onclick="add_one([['acm', 1]], 'acm-1.7')">队列</button>
+        <button type="button" class="btn btn-default" id="web-1.2" onclick="add_one([['web', 1]], 'web-1.2')">搭建个人博客</button>
+        <button type="button" class="btn btn-default" id="game-1.4" onclick="add_one([['game', 1]], 'game-1.4')">卡面</button>
+        <button type="button" class="btn btn-default" id="acm-1.6" onclick="add_one([['acm', 1]], 'acm-1.6')">最大独立集</button>
+        <button type="button" class="btn btn-default" id="web-1.3" onclick="add_one([['web', 1]], 'web-1.3')">搭建服务器</button>
+        <button type="button" class="btn btn-default" id="android-1.5" onclick="add_one([['android', 2]], 'android-1.5')">喝杯Java</button>
+        <button type="button" class="btn btn-default" id="game-1.8" onclick="add_one([['game', 1]], 'game-1.8')">打得不错</button>
+        <button type="button" class="btn btn-default" id="web-1.4" onclick="add_one([['web', 1]], 'web-1.4')">数据库</button>
+        <button type="button" class="btn btn-default" id="game-1.7" onclick="add_one([['game', 1]], 'game-1.7')">修BUG</button>
+        <button type="button" class="btn btn-default" id="game-1.1" onclick="add_one([['game', 1]], 'game-1.1')">狗策划</button>
+        <button type="button" class="btn btn-default" id="android-1.1" onclick="add_one([['android', 2]], 'android-1.1')">牛轧糖</button>
+        <button type="button" class="btn btn-default" id="ios-1.3" onclick="add_one([['ios', 2]], 'ios-1.3')">-30%</button>
+        <button type="button" class="btn btn-default" id="acm-1.10" onclick="add_one([['acm', 1]], 'acm-1.10')">A*算法</button>
+        <button type="button" class="btn btn-default" id="ha-1.1" onclick="add_one([], 'ha-1.1')">谈笑风生</button>
+        <button type="button" class="btn btn-default" id="web-1.5" onclick="add_one([['web', 1]], 'web-1.5')">DoS和DDoS</button>
+        <button type="button" class="btn btn-default" id="ios-1.5" onclick="add_one([['ios', 2]], 'ios-1.5')">从入门到放弃</button>
+        <button type="button" class="btn btn-default" id="game-1.3" onclick="add_one([['game', 1]], 'game-1.3')">游戏策划</button>
+        <button type="button" class="btn btn-default" id="ios-1.1" onclick="add_one([['ios', 2]], 'ios-1.1')">乔布斯</button>
+        <button type="button" class="btn btn-default" id="web-1.6" onclick="add_one([['web', 1]], 'web-1.6')">翻越长城</button>
+        <button type="button" class="btn btn-default" id="ha-1.4" onclick="add_one([], 'ha-1.4')">+1s</button>
+        <button type="button" class="btn btn-default" id="game-1.5" onclick="add_one([['game', 1]], 'game-1.5')">3D建模</button>
+        <button type="button" class="btn btn-default" id="ios-1.2" onclick="add_one([['ios', 2]], 'ios-1.2')">手机越变越长</button>
+        <button type="button" class="btn btn-default" id="acm-1.5" onclick="add_one([['acm', 1]], 'acm-1.5')">树</button>
+        <button type="button" class="btn btn-default" id="web-1.7" onclick="add_one([['web', 1]], 'web-1.7')">Alice, Bob and Eve的故事</button>
+        <button type="button" class="btn btn-default" id="android-1.4" onclick="add_one([['android', 2]], 'android-1.4')">捉猫小游戏</button>
+        <button type="button" class="btn btn-default" id="game-1.10" onclick="add_one([['game', 1]], 'game-1.10')">xx%off</button>
+        <button type="button" class="btn btn-default" id="acm-1.9" onclick="add_one([['acm', 1]], 'acm-1.9')">链表</button>
+        <button type="button" class="btn btn-default" id="ha-1.5" onclick="add_one([], 'ha-1.5')">香港记者</button>
+        <button type="button" class="btn btn-default" id="web-1.8" onclick="add_one([['web', 1]], 'web-1.8')">http和https</button>
+        <button type="button" class="btn btn-default" id="acm-1.4" onclick="add_one([['acm', 1]], 'acm-1.4')">二分查找</button>
+        <button type="button" class="btn btn-default" id="android-1.2" onclick="add_one([['android', 2]], 'android-1.2')">从入门到女装</button>
+        <button type="button" class="btn btn-default" id="acm-1.3" onclick="add_one([['acm', 1]], 'acm-1.3')">栈</button>
+        <button type="button" class="btn btn-default" id="web-1.9" onclick="add_one([['web', 1]], 'web-1.9')">小黑框终端</button>
+        <button type="button" class="btn btn-default" id="game-1.2" onclick="add_one([['game', 1]], 'game-1.2')">unity</button>
+        <button type="button" class="btn btn-default" id="game-1.9" onclick="add_one([['game', 1]], 'game-1.9')">还我血汗钱</button>
+        <button type="button" class="btn btn-default" id="acm-1.2" onclick="add_one([['acm', 1]], 'acm-1.2')">最小生成树</button>
+        <button type="button" class="btn btn-default" id="ha-1.3" onclick="add_one([], 'ha-1.3')">坦克人</button>
+        <button type="button" class="btn btn-default" id="web-1.10" onclick="add_one([['web', 1]], 'web-1.10')">ISO/OSI模型</button>
+        <button type="button" class="btn btn-default" id="acm-1.8" onclick="add_one([['acm', 1]], 'acm-1.8')">差分约束系统</button>
+      </div>
+  </div>
+</section>
+
+<!-- 优雅的语言 -->
+<section>
+  <div class="container">
+    <h2>优雅的语言</h2>
+    <p>以下是七种语言版本的"Hello World!程序"</p>
+    <p>请选择你觉得优雅的语言</p>
+    <div>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="c-2" onclick="add_one([['acm', 1]],'c-2')">C</button>
+<pre class="prettyprint lang-c">#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello World!&quot;);
+    return 0;
+}</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="cpp-2" onclick="add_one([['acm', 1]],'cpp-2')">C++</button>
+<pre class="prettyprint lang-c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; &quot;Hello World!&quot;;
+    return 0;
+}</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="c#-2" onclick="add_one([['game', 3]],'c#-2')">C#</button>
+<pre class="prettyprint lang-c#">using System;
+public class hello
+{
+    public static void Main()
+    {
+        Console.WriteLine(&quot;Hello World!&quot;);
+    }
+}</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="oc-2" onclick="add_one([['ios', 3]],'oc-2')">Objective-C</button>
+<pre class="prettyprint lang-objective-c">#import &lt;Foundation/Foundation.h&gt;
+int main (int argc, const char * argv[])
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSLog (@&quot;Hello, World!&quot;);
+    [pool drain];
+    return 0;
+}</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="java-2" onclick="add_one([['android', 3], ['acm', 1]],'java-2')">Java</button>
+<pre class="prettyprint lang-java">import java.io.*;
+class hello
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="py-2" onclick="add_one([['web', 2]],'py-2')">Python</button>
+      <pre class="prettyprint lang-python">print &#39;Hello World!&#39;</pre>
+      <br>
+      <button type="button" class="btn btn-default btn-lg btn-h3" id="js-2" onclick="add_one([['web', 1]],'js-2')">JavaScript</button>
+      <pre class="prettyprint lang-javascript">alert(&#39;Hello World!&#39;);</pre>
+    </div>
+  </div>
+</section>
+
+<!-- 结果 -->
+<section>
+  <div class="container">
+    <div class="h2">
+      你的结果
+      <button type="button" class="btn btn-lg" onclick="result_reset()">重置</button>
+    </div>
+    <p>太棒了，我们根据你的作答给出了极具偏见的建议，所以···</p>
+    <p id="result_text"></p>
+    <div id="radar" style="height:400px;"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-sm-8">
+        <ul class="list-inline">
+          <li><a title="项目前端源代码" href="https://github.com/Keyboard-l/SSSTA-Official-Site">GitHub</a></li>
+          <li><a title="It's a big surprise for you!" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/surprise.html">神秘入口</a></li>
+          <li><a title="与dalao谈笑风生" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/contact.html">联系我们</a></li>
+          <li><a title="关于该网站" href="https://github.com/Keyboard-l/SSSTA-Official-Site/blob/master/README.md">关于</a></li>
+        </ul>
+        <br>
+        <p>
+          该网站由软院科协
+          <a href="http://www.three7.cc/"><em>叁拾柒</em></a>
+          和
+          <a href="https://keyboard-l.github.io/myBlog/"><em>Keyboard</em></a>
+          设计。
+        </p>
+        <p>国家211重点高校西安电子科技大学国家示范性<a href="./index.html"><em>软件学院科学与技术协会</em></a>全体成员祝您走上人生巅峰。</p>
+      </div>
+      <div class="col-lg-3 col-xs-4">
+        <img class="img-responsive" src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/footer_icon.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- 结果图表绘制 -->
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/echarts.min.js" rel="script"></script>
+
+<!-- 代码语法高亮 -->
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/prettify.min.js"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/run_prettify.min.js"></script>
+
+<!-- 游戏 -->
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/test.min.js" rel="script"></script>
+
+<!-- Bootstrap -->
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/jquery.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/bootstrap.min.js" rel="script"></script>
+</body>
+</html>

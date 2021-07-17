@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/icon.png" rel="icon ">
+  <title>注册成功</title>
+  <!-- Bootstrap -->
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/inform.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h2 id="title">亲爱的undefined同学：</h2>
+        <br>
+        <p>我们很高兴你加入我们西电软院科协</p>
+        <p>相信你能在这里找到你的梦想！</p>
+        <p>前往填写你的详细信息，让学长们更好地了解你吧</p>
+        <br>
+        <a class="btn btn-lg" href="./join_us.html">填写详细信息</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script rel="script">
+    var name = decodeURI(window.location.search.substring(6));
+    document.getElementById('title').innerHTML = '亲爱的'+name+'同学';
+</script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/jquery.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/bootstrap.min.js" rel="script"></script>
+</body>
+</html>

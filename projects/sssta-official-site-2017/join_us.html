@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/icon.png" rel="icon ">
+  <title>报名</title>
+  <!-- Bootstrap -->
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/css/main.min.css" rel="stylesheet">
+</head>
+
+<body onload="get_my_profile()">
+<header>
+  <nav class="navbar navbar-inverse title join">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand title" href="./index.html"><img src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/nav-icon.png" height="32" width="100"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="./test.html">小测试</a></li>
+          <li><a href="./groups_introduce.html">分组介绍</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./join_us.html">加入我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="jumbotron join">
+  <div class="container">
+    <h1>加入我们！</h1>
+    <p>放心吧，学长们不会偷窥你们的个人资料的</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <ul class="nav nav-tabs col-lg-10 col-lg-offset-1">
+        <li role="presentation" class="active" id="sign_up-li"><a onclick="turn_to('sign_up')">注册</a></li>
+        <li role="presentation" id="sign_in-li"><a onclick="turn_to('sign_in')">登录</a></li>
+        <li class="disabled" role="presentation" id="profile-li"><a id="profile-a">我的信息</a></li>
+      </ul>
+      <div id="sign_up-div" class="col-lg-10 col-lg-offset-1"><!-- 注册部分 -->
+        <form>
+          <!-- 基本信息 -->
+          <div class="form-div">
+            <label>姓名</label>
+            <input name="name" type="text" class="form-control" placeholder="Name" id="name-input1" oninput="submit_check('form1')">
+          </div>
+          <div class="form-div">
+            <label>性别</label>
+            <select name="sex" title="Sex" class="form-control" id="sex-input1" oninput="submit_check('form1')">
+              <option value="undefined" selected disabled>请选择...</option>
+              <option value="female">女生</option>
+              <option value="male">男生</option>
+            </select>
+          </div>
+          <div class="form-div">
+            <label>Email<small class="hidden" style="color: red;" id="had_signed_email">（该邮箱已使用，请更换或直接前往登录！）</small></label>
+            <input name="email" type="text" class="form-control" placeholder="Email" id="email-input1" oninput="submit_check('form1')">
+          </div>
+          <hr>
+          <!-- 账号密码 -->
+          <div class="form-div">
+            <label>学号/通知书号<small class="hidden" style="color: red;" id="had_signed">（账号已注册，请直接登录！）</small></label>
+            <input name="account" type="text" class="form-control" placeholder="Account" id="account-input1" oninput="submit_check('form1')">
+          </div>
+          <div class="form-div">
+            <label>密码</label>
+            <input name="password" type="password" class="form-control" placeholder="Password" id="pass-input1" oninput="submit_check('form1')" onblur="pass_again('onblur')">
+          </div>
+          <div class="form-div form-group" id="pass_again-div1">
+            <label class="control-label">确认密码</label>
+            <input type="password" class="form-control" placeholder="Password" id="pass_again-input1" onfocus="pass_again('onfocus')" oninput="pass_again('onchange');submit_check('form1')" onblur="pass_again('onblur')">
+            <span class="" aria-hidden="true" id="pass_again-span1"></span>
+          </div>
+          <button type="button" class="btn btn-lg disabled" id="submit1">注册</button>
+        </form>
+      </div><!-- /注册部分 -->
+
+      <div id="sign_in-div" class="hidden col-lg-10 col-lg-offset-1"><!-- 登录部分 -->
+        <form>
+          <div class="form-div">
+            <label>学号/通知书号<small class="hidden" style="color: red;" id="num_unsigned">（该账号未被注册，请注册后重试！）</small></label>
+            <input name="account" type="text" class="form-control" placeholder="Account" id="account-input2" oninput="submit_check('form2')">
+          </div>
+          <div class="form-div">
+            <label>密码<small class="hidden" style="color: red;" id="pass_wrong">（密码错误，请核对后重试！）</small></label>
+            <input name="password" type="password" class="form-control" placeholder="Password" id="pass-input2" oninput="submit_check('form2')">
+          </div>
+          <button type="button" class="btn btn-lg disabled" id="submit2">登录</button>
+        </form>
+      </div><!-- /登录部分 -->
+
+      <div id="profile-div" class="hidden col-lg-10 col-lg-offset-1"><!-- 详细信息部分 -->
+        <div>
+          <h2 class="text-right page-header" id="name_and_number">Undefined<small>undefined</small></h2>
+        </div>
+
+        <form>
+          <!-- 联系方式 -->
+          <h3>联系方式</h3>
+          <div class="form-div">
+            <label>邮箱</label>
+            <input name="email" type="email" class="form-control" placeholder="Email" id="email-input3">
+          </div>
+          <div class="form-div">
+            <label>手机</label>
+            <input name="phone" type="text" class="form-control" placeholder="Phone" id="phone-input3">
+          </div>
+          <div class="form-div">
+            <label>QQ</label>
+            <input name="qq" type="text" class="form-control" placeholder="QQ" id="qq-input3">
+          </div>
+          <div class="form-div">
+            <label>Wechat</label>
+            <input name="wechat" type="text" class="form-control" placeholder="Wechat" id="wechat-input3">
+          </div>
+
+          <!-- 自我介绍 -->
+          <h3>自我介绍</h3>
+          <div class="form-div">
+            <label>你的梦想是<small>（仅作面试参考以及激发你们对该问题的思考，对日后实际分组无影响。）</small></label>
+            <select name="direction" title="Direction" class="form-control" id="direction-input3" oninput="switch_group()">
+              <option value="undefined" selected>不确定...</option>
+              <option value="web">Web</option>
+              <option value="android">Android</option>
+              <option value="ios">iOS</option>
+              <option value="game">Game</option>
+              <option value="acm">ACM</option>
+              <option value="design">设计部</option>
+            </select>
+          </div>
+          <div class="form-div">
+            <label>介绍一下你自己</label>
+            <textarea name="description" class="form-control" rows="4" style="resize: none;" placeholder="随便写吧，学长们未能就问什么具体的问题达成一致，所以你有机会在这瞎编" id="description-input3"></textarea>
+          </div>
+          <hr>
+          <!-- 分组选题 -->
+          <div id="web-option">
+            <h4 class="text-right">web组选题</h4>
+            <div class="form-div" >
+              <label>你更倾向于web的前端还是后端？</label>
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="web_a" value="front" id="web_a-front-input3">前端
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="web_a" value="back" id="web_a-back-input3">后端
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="web_a" value="full" id="web_a-full-input3" checked>我想全栈
+              </label>
+            </div>
+            <div class="form-div">
+              <label>一句话概括你刚刚选择web组的动机</label>
+              <textarea name="web_b" class="form-control" rows="2" style="resize: none;" placeholder="如果你就是为了黑掉你母校的网站你就直说吧/微笑" id="web_b-input3"></textarea>
+            </div>
+          </div>
+          <div id="game-option">
+            <h4 class="text-right">game组选题</h4>
+            <div class="form-div">
+              <label>谈谈你对游戏的理解<small>（100語限定）</small></label>
+              <textarea name="game_a" class="form-control" rows="4" style="resize: none;" placeholder="游戏组长表示想知道你们怎么为你们玩游戏编出堂而皇之的理由" id="game_a-input3"></textarea>
+            </div>
+          </div>
+          <div id="acm-option">
+            <h4 class="text-right">ACM组选题</h4>
+            <div class="form-div">
+              <label>竞赛的参加与获奖经历</label>
+              <textarea name="acm_a" class="form-control" rows="4" style="resize: none;" placeholder="把你想炫耀的都说出来吧" id="acm_a-input3"></textarea>
+            </div>
+          </div>
+
+          <!-- 提交 -->
+          <button type="button" class="btn btn-lg" id="submit3" onclick="post_my_profile()">提交</button>
+        </form>
+      </div><!-- /详细信息部分 -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-sm-8">
+        <ul class="list-inline">
+          <li><a title="项目前端源代码" href="https://github.com/Keyboard-l/SSSTA-Official-Site">GitHub</a></li>
+          <li><a title="It's a big surprise for you!" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/surprise.html">神秘入口</a></li>
+          <li><a title="与dalao谈笑风生" href="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/contact.html">联系我们</a></li>
+          <li><a title="关于该网站" href="https://github.com/Keyboard-l/SSSTA-Official-Site/blob/master/README.md">关于</a></li>
+        </ul>
+        <br>
+        <p>
+          该网站由软院科协
+          <a href="http://www.three7.cc/"><em>叁拾柒</em></a>
+          和
+          <a href="https://keyboard-l.github.io/myBlog/"><em>Keyboard</em></a>
+          设计。
+        </p>
+        <p>国家211重点高校西安电子科技大学国家示范性<a href="./index.html"><em>软件学院科学与技术协会</em></a>全体成员祝您走上人生巅峰。</p>
+      </div>
+      <div class="col-lg-3 col-xs-4">
+        <img class="img-responsive" src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/img/footer_icon.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/md5.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/ajax.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/join_us.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/jquery.min.js" rel="script"></script>
+<script src="//sssta-official-site.oss-cn-shenzhen.aliyuncs.com/js/bootstrap.min.js" rel="script"></script>
+</body>
+</html>

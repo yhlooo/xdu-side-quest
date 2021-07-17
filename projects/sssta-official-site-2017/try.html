@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>code</title>
+</head>
+<body>
+<form action="//39.108.75.56:8080/surprise" method="post">
+  <div class="form-group">
+    <label>姓名</label>
+    <input name="name" type="text" class="form-control" placeholder="Name" id="name" oninput="submit_check('oninput')">
+  </div>
+  <div class="form-group">
+    <label>题号</label>
+    <input name="key" type="text" class="form-control" placeholder="Key" id="key" onfocus="submit_check('onfocus')" onblur="submit_check('onblur')" oninput="submit_check('oninput')">
+  </div>
+  <label>答案</label>
+  <div class="input-group">
+    <input name="value" type="text" class="form-control" placeholder="Value" id="value" oninput="submit_check('oninput')">
+    <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" id="submit">提交</button>
+            </span>
+  </div>
+</form>
+</body>
+</html>

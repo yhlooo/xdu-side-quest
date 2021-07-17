@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body{
+  padding: 80px 0 100px;
+  background-color: #2B3137;
+  color: #FFFFFF;
+}
+a.btn-lg{
+  padding: 15px 30px;
+  border-color: #ffffff;
+}
+a.btn-lg:link, a.btn-lg:visited{
+  background-color: transparent;
+  color: #ffffff;
+}
+a.btn-lg:hover, a.btn-lg:active{
+  background-color: #ffffff;
+  color: #2B3137;
+}
+
+/* section----------------------------------------------- */
+section{
+  margin: 0;
+  padding: 80px 0;
+}
+/* -----------------------------------------------section */
+
+
+
