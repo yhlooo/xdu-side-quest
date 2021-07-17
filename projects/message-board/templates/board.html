@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">留言板</h1>
+        <div class="message">
+            <p class="normal">您可以在此写下留言或查看别人的留言。或<a class="normal" href="{{ url_for('login') }}">重新登录</a></p>
+        </div>
+    </div>
+    <form class="contain" action="{{ url_for('board') }}" method="post">
+        <input name="account" value="{{ account }}" style="height:0;width: 0;visibility: hidden">
+        <div class="board_form" style="height: 150px;">
+            {{ username }}的留言：
+            <textarea name="message" title="请写下您的留言" required></textarea>
+        </div>
+        <div class="board_form">
+            <input class="submit" type="submit" value="提交">
+        </div>
+    </form>
+    <div class="contain">
+        <h2 class="normal">一些过去收到的留言</h2>
+        <div class="message">
+            <p class="normal">这些是过去所有用户的全部留言（留言按时间降序排列）</p>
+        </div>
+    </div>
+    <div class="contain">
+        {% for msg in all_message %}
+            <div class="msg">
+                <p class="msg_username">{{ msg[0] }}:</p>
+                <p class="msg">{{ msg[3] }}</p>
+                <p class="msg_time">{{ msg[2] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

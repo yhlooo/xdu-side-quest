@@ -1,3 +1,8 @@
 # xdu-side-quest
 
 本人在西安电子科技大学完成的一些“支线任务”的集合，一个 Monorepo ，这些项目普遍价值不高，只是作为一个记录
+
+## 时间线
+
+- 2017H1 projects/message-board
+- 2017H2 projects/sssta-official-site-2017
