@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">考勤管理</h1>
+        <div class="message">
+            <p class="normal">欢迎使用<a title="Keyboard的个人博客" class="normal" href="http://keyboard-l.coding.me/">Keyboard</a>的考勤管理系统</p>
+            <p class="normal">在使用我们的服务之前，请先进行登录</p>
+        </div>
+    </div>
+
+    <div class="contain a">
+        <div class="abutton"><a class="button" href="{{ url_for('sign_in') }}">登录</a></div>
+    </div>
+</div>
+</body>
+</html>

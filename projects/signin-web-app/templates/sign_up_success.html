@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>注册成功</title>
+    <link href="{{ url_for('static', filename='main.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">注册成功！</h1>
+        <div class="message">
+            <h3 class="normal">亲爱的{{ name }}同学：</h3>
+            <p class="normal">欢迎您使用我们的服务并给予我们信任，我们会保证您的个人信息安全，现在……</p>
+            <p class="normal">您的新账号已经成功注册，您可以立即使用其进行登录。</p>
+        </div>
+    </div>
+    <div class="contain a">
+        <a class="button" href="{{ url_for('sign_in') }}">登陆</a>
+    </div>
+</div>
+</body>
+</html>

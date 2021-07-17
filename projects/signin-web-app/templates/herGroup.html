@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ groupname }}</title>
+    <link href="{{ url_for('static', filename = 'add.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+    <script>
+        var lat = 'null';
+        var lon = 'null';
+        var acc = 'null';
+
+        function sendLocation(groupId)
+        {
+            getLocation();
+            wait(groupId);
+        }
+
+        function wait(groupId)
+        {
+            if(lat === 'null'){
+                setTimeout('wait('+groupId+')', 1000)
+            }
+            else{
+                post('{{ url_for("sign_on") }}', {
+                    'groupId': groupId,
+                    'latitude': lat,
+                    'longitude': lon,
+                    'accuracy': acc
+                });
+            }
+        }
+
+        function post(URL, PARAMS) {
+            var temp = document.createElement("form");
+            temp.action = URL;
+            temp.method = "post";
+            temp.style.display = "none";
+            for (var x in PARAMS) {
+                var opt = document.createElement("textarea");
+                opt.name = x;
+                opt.value = PARAMS[x];
+                // alert(opt.name)
+                temp.appendChild(opt);
+            }
+            document.body.appendChild(temp);
+            temp.submit();
+            return temp;
+        }
+
+        function getLocation()
+        {
+            var options={
+                enableHighAccuracy:true,
+                maximumAge:1000
+            };
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+            }
+            else{
+                alert("该浏览器不支持获取位置信息")
+            }
+        }
+        function onSuccess(position)
+        {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            acc = position.coords.accuracy;
+        }
+        function onError(error){
+            switch(error.code){
+                case 1:
+                    alert("位置服务被拒绝");
+                    break;
+                case 2:
+                    alert("暂时获取不到位置信息");
+                    break;
+                case 3:
+                    alert("获取信息超时");
+                    break;
+                case 4:
+                    alert("未知错误");
+                    break;
+            }
+        }
+
+        function changeColor()
+        {
+            document.getElementById('cir').style.backgroundColor = document.getElementById('cir').style.borderColor
+        }
+
+        function signOff(groupId)
+        {
+            post('{{ url_for("sign_off") }}', {'groupId':groupId});
+        }
+    </script>
+</head>
+<body>
+<div class="main">
+    <div class="head">
+        <div class="out"><a class="signout" href="{{ url_for('index') }}">返回</a></div>
+        <div class="information"><div class="firstinform">{{ name }}</div><div class="secondinform">({{ account }})</div></div>
+        <div class="signout"><a class="signout" href="{{ url_for('sign_out') }}">登出</a></div>
+    </div>
+    <div class="groupinformation">
+        <h3>{{ groupName }}</h3>
+        <p>ID. {{ groupId }}</p>
+    </div>
+    <div class="sign">
+        {% if status == 'undefined' %}
+            <div id="cir" class="circle" onclick="sendLocation({{ groupId }})" onmousedown="changeColor()" style="background-color: #1478c8;border-color: #0a6ebe;">点此签到</div>
+        {% elif status == 'close' %}
+            <div class="circle" style="background-color: #969696;border-color: #8c8c8c;">暂未开放</div>
+        {% elif status >= "0.05" %}
+            <div id="cir" class="circle" onclick="signOff({{ groupId }})" onmousedown="changeColor()" style="background-color: #00c800;border-color: #00b400;">签到成功</div>
+        {% elif status < "0.01" %}
+            <div id="cir" class="circle" onclick="sendLocation({{ groupId }})" onmousedown="changeColor()" style="background-color: #c80000;border-color: #aa0000;">点此重试</div>
+        {% elif status >= "0.01" %}
+            <div id="cir" class="circle" onclick="sendLocation({{ groupId }})" onmousedown="changeColor()" style="background-color: #c8c800;border-color: #bebe00;">置信值低</div>
+        {% endif %}
+    </div>
+    <div class="signstatus">
+        <p>签到人数：{{ number[0] }}/{{ number[1] }}</p>
+        <p>置信值：{{ status }}</p>
+    </div>
+
+</div>
+</body>
+</html>
+

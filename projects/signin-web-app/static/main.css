@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 微软雅黑;
+}
+
+body {
+    background-color: #1e3264;
+}
+
+div.main {
+    width: inherit;
+    margin: 50px auto;
+    padding: 60px 80px 130px;
+    background-color: #ffffff;
+}
+
+.contain {
+    margin: 0;
+    padding: 20px 0;
+    background-color: inherit;
+}
+
+div.message {
+    padding-top: 20px;
+}
+
+
+
+h1.normal,h2.normal,h3.normal {
+    font-size: 60px;
+}
+p.normal {
+    font-size: 40px;
+    color: #505050
+}
+em{
+    color: #999999;
+}
+hr{
+    height: 2px;
+    background-color: #6496d7;
+}
+
+
+div.signup_form,div.login_form {
+    height: 120px;
+    padding-bottom:25px;
+    background-color: inherit;
+    font-size: 30px;
+    font-weight: 500;
+}
+div.board_form {
+    height: 80px;
+    padding-bottom:25px;
+    background-color: inherit;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+/* 表单一般性 */
+select {
+    font-size: 30px;
+    height: 62px;
+    width: 790px;
+    padding: 3px 0 3px 6px;
+    border: 2px;
+    border-color: #999999;
+    border-style: solid;
+}
+input {
+    font-size: 30px;
+    height: 50px;
+    width: 770px;
+    padding: 4px 8px;
+    border: 2px;
+    border-color: #999999;
+    border-style: solid;
+}
+textarea {
+    resize: none;
+    font-size: 30px;
+    height: 105px;
+    width: 770px;
+    padding: 4px 8px;
+    border: 2px;
+    border-color: #999999;
+    border-style: solid;
+}
+select,input,select:link,input:link,select:visited,input:visited {
+    color: #999999;
+}
+select:hover,input:hover {
+    color: #646464;
+    border-color: #646464;
+}
+select:focus,input:focus {
+    border-color: #0078D7;
+    color: #000000;
+}
+select:active,input:active {
+    color: #c8c8c8;
+}
+
+/* 提交 */
+input.submit,input.submit:link,input.submit:visited {
+    height: 80px;
+    width: 790px;
+    background-color: #0078D7;
+    color: #ffffff;
+    border: 2px;
+    border-style: solid;
+    border-color: #0078D7;
+}
+input.submit:hover,input.submit:focus{
+    border-color: #005ac8;
+}
+input.submit:active{
+    background-color: #005ac8;
+    border-color: #005ac8;
+}
+
+/* 两列的表单 */
+div.twolistform {
+    width: 390px;
+    float: left;
+    padding-right: 10px
+}
+div.twolistform > input{
+    width: 370px;
+}
+div.twolistform > select{
+    width: 390px;
+}
+div.twolistform.first{
+    width: 100px;
+}
+div.twolistform.second{
+    width: 680px;
+}
+div.twolistform.second > input{
+    width: 660px;
+}
+
+/* 各种锚 */
+div.contain.a {
+    height: 45px;
+}
+a.button,a.button:link,a.button:visited {
+    width: inherit;
+    height: inherit;
+    padding: 10px 300px;
+    font-size: 50px;
+    background-color: #0078D7;
+    color: #ffffff;
+    border: 3px;
+    border-style: solid;
+    border-color: #0078D7;
+}
+a.button:hover,a.button:focus {
+    border-color: #005ac8;
+}
+a.button:active {
+    border-color: #005ac8;
+    background-color: #005ac8;
+}
+div.abutton{
+    width: 710px;
+    height: 93px;
+    margin: 30px auto 0px;
+}
+
+a.normal,a.normal:link,a.normal:visited {
+    font: inherit;
+    color: #005ac8;
+}
+a.normal:hover,a.normal:focus {
+    font-size: 105%;
+}
+a.normal:active {
+    color: #c8c8c8;
+}
+
+/* 留言格式 */
+div.msg{
+    padding: 10px 10px 30px;
+    border: 2px;
+    border-style: solid;
+    border-color: #78aad7;
+    margin-bottom:20px;
+}
+p.msg_username{
+    font-size: 22px;
+    color: #0078D7;
+    padding-bottom: 5px;
+}
+p.msg{
+    font-size: 16px;
+    color: #323232;
+    padding-bottom: 5px;
+}
+p.msg_time{
+    color: #787878;
+    float:right;
+}

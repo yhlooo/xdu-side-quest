@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ groupname }}</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">{{ groupName }}</h1>
+        <div class="message">
+            <p class="normal">这就是您查找的组{{ groupId }}，确定加入该组吗</p>
+            <p class="normal">搜错组？<a class="normal" href="{{ url_for('search_group') }}">点此重新搜索</a>。</p>
+        </div>
+    </div>
+    <form class="contain" action="{{ url_for('join_group') }}" method="post">
+            <input style="height: 0;width: 0;border: 0;" type="text" title="请输入您要查找的组ID" name="groupId" value="{{ groupId }}" required>
+        <div class="login_form">
+            {% if joinStatus == "outside" %}
+            <input class="submit" type="submit" value="确认加入" name="submit">
+            {% elif joinStatus == "inside" %}
+            <input class="submit" type="submit" value="您已加入" name="submit" style="background-color: #8c8c8c;border: 0;" disabled>
+            {% endif %}
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>创建组</title>
+    <link href="{{ url_for('static', filename='main.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <!-- 头部说明 -->
+    <div class="contain">
+        <h1 class="normal">创建一个组</h1>
+        <div class="message">
+            <p class="normal">您只需要输入一个您喜欢的组名，即可创建组</p>
+        </div>
+    </div>
+    <!-- 注册信息表 -->
+    <form class="contain" action="{{url_for('create_group')}}" method="post">
+        <!-- 组名 -->
+        <div class="signup_form">
+            组名<br><input title="请输入您喜欢的组名" name="groupName" required>
+        </div>
+        <!-- 提交 -->
+        <div class="signup_form">
+            <input class="submit" type="submit" value="创建组">
+        </div>
+    </form>
+</div>
+</body>
+</html>

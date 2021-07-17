@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 微软雅黑;
+}
+body{
+}
+a{
+    text-decoration:none
+}
+a.list{
+    color: #646464
+}
+#turn{
+    color: #e6e6e6;
+}
+h3{
+    font-size: 80px;
+}
+div.main{
+    height: auto;
+    width: inherit;
+    padding: 0 0 100px;
+}
+div.head{
+    height: 100px;
+    width: inherit;
+    padding: 10px 0;
+    background-color: rgba(30, 50, 80, 1);
+}
+div.information{
+    float: left;
+    height: 80px;
+    width: 450px;
+    padding: 10px 20px;
+    font-size: 50px;
+}
+div.firstinform{
+    float: left;
+    color: rgb(100, 140, 170);
+}
+div.secondinform{
+    margin-top: 20px;
+    float: left;
+    font-size: 60%;
+    color: rgb(100, 140, 170);
+}
+div.out{
+    float: left;
+    height: 80px;
+    width: 160px;
+    padding: 7px 0 13px;
+    background-color: inherit;
+}
+div.signout{
+    float: right;
+    height: 80px;
+    width: 160px;
+    padding: 5px 0 15px;
+    background-color: inherit;
+}
+a.signout{
+    height: 100px;
+    width: 160px;
+    padding: 0 20px;
+    font-size: 60px;
+    color: rgba(70,110,140,1);
+}
+
+div.contain{
+    height: auto;
+    width: 90%;
+    margin: 50px auto 100px;
+    font-size: 60px;
+}
+div.line{
+    height: 5px;
+    width: 95%;
+    margin-bottom: 20px;
+    background-color: #466e8c;
+}
+*.second{
+    font-size: 70%;
+    margin-left: 20px;
+}
+
+div.groupinformation{
+    margin: 100px auto 100px;
+    text-align: center;
+    color: #505050;
+}
+div.groupinformation > p{
+    margin-top: 20px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+div.circle{
+    width: 500px;
+    height: 140px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    padding: 180px 0;
+    margin: 0 auto;
+    color: aliceblue;
+    border: 20px;
+    border-style: solid;
+}
+
+div.signstatus{
+    font-size: 40px;
+    margin: 100px 0;
+    text-align: center;
+    color: #505050;
+    font-weight: bold;
+}
+
+h3.groupinform{
+    font-size: 50px;
+}
+div.groupstatus{
+    height: 160px;
+    width: 100%;
+    margin: 50px 0;
+}
+div.groupstatus_inform{
+    width: 50%;
+    height: 160px;
+    float: left;
+}
+div.groupstatus_a{
+    width: 45%;
+    height: 80px;
+    float: left;
+    color: #e6e6e6;
+    background-color: #005ac8;
+    text-align: center;
+    padding: 40px 0;
+}
+div.groupstatus_a > a{
+    width: inherit;
+    padding: 40px 10px;
+}
+div.centerLocation{
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+table.list{
+    font-size: 40px;
+    width: 100%;
+}
+thead{
+    font-size: 45px;
+}
+td.name{
+    width: 25%;
+}
+td.id{
+    width: 45%;
+}
+td.status{
+    width: 30%;
+}

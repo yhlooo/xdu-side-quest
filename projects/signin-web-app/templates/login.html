@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">登录</h1>
+        <div class="message">
+            <p class="normal">请使用注册的学号作为用户名登录</p>
+            <p class="normal">还没有账户？<a class="normal" href="{{ url_for('sign_up') }}">点此立即注册</a>。</p>
+        </div>
+    </div>
+    <form class="contain" action="{{ url_for('sign_in') }}" method="post">
+        <div class="login_form">
+            账号<br>
+            <input type="text" title="请输入注册为账号的邮箱" name="account" value="{{ account }}" required>
+            <p style="color: red;font-size: 15px;">
+                {% if unsign=='unsigned' %}
+                    该账号还未被注册，您可以<a class="normal" href="{{ url_for('sign_up') }}">立即注册</a>
+                {% endif %}
+            </p>
+        </div>
+        <div class="login_form">
+            密码<br>
+            <input type="password" title="请输入密码，注意区分大小写" name="password" required>
+            <p style="color: red;font-size: 15px;">
+                {% if password_wrong=='password_wrong' %}
+                    密码或用户名输入错误，请核对后重新输入。
+                {% endif %}
+            </p>
+        </div>
+        <div class="login_form">
+            <input class="submit" type="submit" value="登录" name="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link href="{{ url_for('static', filename='add.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+
+<div class="main">
+    <div class="head">
+        <div class="information"><div class="firstinform">{{ name }}</div><div class="secondinform">({{ account }})</div></div>
+        <div class="signout"><a class="signout" href="{{ url_for('sign_out') }}">登出</a></div>
+    </div>
+    <div class="contain">
+        <h3>加入的组<a class="second list" href="{{ url_for('search_group') }}">(加入组)</a></h3>
+        <div class="line"></div>
+        <div class="list">
+            {% for group in herGroup %}
+                <div><a class="list" href="{{ url_for('into_group', groupId=group[0]) }}">{{ group[1] }}</a></div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="contain">
+        <h3>创建的组<a class="second list" href="{{ url_for('create_group') }}">(创建组)</a></h3>
+        <div class="line"></div>
+        <div class="list">
+            {% for group in myGroup %}
+                <div><a  class="list" href="{{ url_for('into_group', groupId=group[0]) }}">{{ group[1] }}</a></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ groupname }}</title>
+    <link href="{{ url_for('static', filename = 'add.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+    <script>
+        var lat = 'null';
+        var lon = 'null';
+        var acc = 'null';
+        var extent;
+        function sendlocation(groupId)
+        {
+            extent = prompt("请输入签到范围(m)", "50");
+            getLocation();
+            wait(groupId);
+        }
+
+        function wait(groupId)
+        {
+            if(lat === 'null'){
+                setTimeout('wait('+groupId+')', 1000)
+            }
+            else{
+                post('{{ url_for("turn_on") }}', {
+                    'extent':extent,
+                    'groupId':groupId,
+                    'latitude':lat,
+                    'longitude':lon,
+                    'accuracy':acc
+                });
+            }
+        }
+
+        function post(URL, PARAMS) {
+            var temp = document.createElement("form");
+            temp.action = URL;
+            temp.method = "post";
+            temp.style.display = "none";
+            for (var x in PARAMS) {
+                var opt = document.createElement("textarea");
+                opt.name = x;
+                opt.value = PARAMS[x];
+                // alert(opt.name)
+                temp.appendChild(opt);
+            }
+            document.body.appendChild(temp);
+            temp.submit();
+            return temp;
+        }
+
+        function getLocation()
+        {
+            var options={
+                enableHighAccuracy:true,
+                maximumAge:1000
+            };
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+            }
+            else{
+                alert("该浏览器不支持获取位置信息")
+            }
+        }
+        function onSuccess(position)
+        {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            acc = position.coords.accuracy;
+        }
+        function onError(error){
+            switch(error.code){
+                case 1:
+                    alert("位置服务被拒绝");
+                    break;
+                case 2:
+                    alert("暂时获取不到位置信息");
+                    break;
+                case 3:
+                    alert("获取信息超时");
+                    break;
+                case 4:
+                    alert("未知错误");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="main">
+    <div class="head">
+        <div class="out"><a class="signout" href="{{ url_for('index') }}">返回</a></div>
+        <div class="information"><div class="firstinform">{{ name }}</div><div class="secondinform">({{ account }})</div></div>
+        <div class="signout"><a class="signout" href="{{ url_for('sign_out') }}">登出</a></div>
+    </div>
+    <div class="contain">
+        <h3 class="groupinform">{{ groupName }}<a class="second" href="{{ url_for('search_group') }}">({{ groupId }})</a></h3>
+        <div class="line"></div>
+        <div class="groupstatus">
+            <div class="groupstatus_inform">
+                <h4>组状态</h4>
+                <p class="second">
+                    {% if members[0][3] == 'close' %}
+                        <p class="second">未开放签到</p>
+                    {% else: %}
+                        <p class="second">已开放签到</p>
+                    {% endif %}
+                </p>
+            </div>
+            <div class="groupstatus_a">
+                {% if members[0][3] == 'close' %}
+                    <a id="turn" onclick="sendlocation({{ groupId }})">开放签到</a>
+                {% else: %}
+                    <a id="turn" href="{{ url_for('turn_off',groupId=groupId) }}">关闭签到</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="centerLocation">
+            <p>经度：{{ location[0] }}</p>
+            <p>纬度：{{ location[1] }}</p>
+            <p>精度：{{ location[2] }}</p>
+        </div>
+        <div class="line"></div>
+        <div class="list">
+            <table class="list" border="0">
+                <thead>
+                    <tr>
+                        <td class="name">姓名</td>
+                        <td class="id">ID</td>
+                        <td class="status">签到状态</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for member in members[2::] %}
+                        <tr>
+                            <td class="name">{{ member[0] }}</td>
+                            <td class="id">{{ member[1] }}</td>
+                        {% if member[3] == 'undefined' %}
+                            <td class="status">未签到</td>
+                        {% elif member[3] == 'close' %}
+                            <td class="status" style="color: #c8c8c8">未开放签到</td>
+                        {% elif member[3] >= "0.05" %}
+                            <td class="status" style="color: #00c800">签到成功</td>
+                        {% elif member[3] < "0.01" %}
+                            <td class="status" style="color: #c80000">签到失败</td>
+                        {% elif member[3] >= "0.01" %}
+                            <td class="status" style="color: #c8c800">可疑</td>
+                        {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="location"></div>
+    </div>
+</div>
+
+</body>
+</html>

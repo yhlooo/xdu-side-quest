@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>创建成功</title>
+    <link href="{{ url_for('static', filename='main.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+</head>
+<body>
+<div class="main">
+    <div class="contain">
+        <h1 class="normal">组创建成功！</h1>
+        <div class="message">
+            <p class="normal">恭喜，您刚刚成功创建了一个组</p>
+            <p class="normal">组ID为 {{ groupId }}</p>
+            <p class="normal">不用担心忘记，您可以随时从您的主页进入您创建的组并查看组ID。其他用户可通过该ID加入该组。</p>
+        </div>
+    </div>
+    <div class="contain a">
+        <a class="button" href="{{ url_for('index') }}">返回主页</a>
+    </div>
+</div>
+</body>
+</html>

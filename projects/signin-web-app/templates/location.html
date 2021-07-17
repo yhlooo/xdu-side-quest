@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+    <link href="{{ url_for('static', filename='icon1.png') }}" rel="icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+    <script>
+
+        function getLocation()
+        {   var options={
+                enableHighAccuracy:true,
+                maximumAge:1000
+            };
+            if (navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+            }
+            else{}
+        }
+        function onSuccess(position)
+        {
+            document.getElementById("latitude").innerHTML = position.coords.latitude;
+            document.getElementById("longitude").innerHTML = position.coords.longitude;
+            document.getElementById("accuracy").innerHTML = position.coords.accuracy;
+            document.getElementById("altitude").innerHTML = position.coords.altitude;
+            document.getElementById("altitudeAccuracy").innerHTML = position.coords.altitudeAccuracy;
+            document.getElementById("heading").innerHTML = position.coords.heading;
+            document.getElementById("speed").innerHTML = position.coords.speed;
+            document.getElementById("timestamp").innerHTML = position.timestamp;
+        }
+        function onError(error){
+            switch(error.code){
+                case 1:
+                    alert("位置服务被拒绝");
+                    break;
+                case 2:
+                    alert("暂时获取不到位置信息");
+                    break;
+                case 3:
+                    alert("获取信息超时");
+                    break;
+                case 4:
+                    alert("未知错误");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body onLoad="getLocation()">
+
+
+<div class="latitude">
+    纬度(latitude)<p id="latitude">undefined</p>
+</div>
+<div class="longitude">
+    经度(longitude)<p id="longitude">undefined</p>
+</div>
+<div class="accuracy">
+    位置精度(accuracy)<p id="accuracy">undefined</p>
+</div>
+<div class="altitude">
+    海拔(altitude)<p id="altitude">undefined</p>
+</div>
+<div class="altitudeAccuracy">
+    海拔精度(altitudeAccuracy)<p id="altitudeAccuracy">undefined</p>
+</div>
+<div class="heading">
+    方向（从正北开始以度计）(heading)<p id="heading">undefined</p>
+</div>
+<div class="speed">
+    速度（米每秒）(speed)<p id="speed">undefined</p>
+</div>
+<div class="timestamp">
+    响应日期时间(timestamp)<p id="timestamp">undefined</p>
+</div>
+
+
+
+</body>
+</html>
