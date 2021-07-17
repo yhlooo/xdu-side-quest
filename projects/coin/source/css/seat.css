@@ -1,0 +1,68 @@
+body {
+    background-color: #1e96c8;
+}
+header.navbar.navbar-default {
+    background-color: transparent;
+}
+header.navbar.navbar-default a {
+    background-color: transparent;
+    color: #ffffff;
+}
+header.navbar.navbar-default a:hover {
+    background-color: #1482aa;
+    color: #ffffff;
+}
+header.navbar.navbar-default a:active {
+    background-color: #144664;
+    color: #ffffff;
+}
+header.navbar.navbar-default a.navbar-brand {
+    background-color: transparent;
+    color: #ffffff;
+}
+div.tip {
+    border-color: #1ec8ff;
+    background-color: #0a4664;
+    color: #ffffff;
+}
+
+span.input-group-btn button.btn.btn-default,
+input.form-control {
+    height: 42px;
+    padding: 10px 12px;
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+label {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+@media(min-width: 750px) {
+    div.seat {
+        font-size: 70px;
+    }
+    span.res_row {
+        font-size: 70px;
+    }
+    span.res_col {
+        font-size: 70px;
+    }
+}
+@media(max-width: 750px) {
+    div.seat {
+        font-size: 10vw;
+    }
+    span.res_row {
+        font-size: 10vw;
+    }
+    span.res_col {
+        font-size: 10vw;
+    }
+}
+div.seat {
+    color: #ffffff;
+    padding: 100px 0 50px;
+}
+

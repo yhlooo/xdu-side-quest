@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+header.navbar.navbar-default {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+header.navbar.navbar-default a {
+    padding: 18px 20px;
+}
+button.navbar-toggle {
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+div.tip {
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    padding: 20px 30px;
+    border: 1px solid;
+    border-radius: 8px;
+}

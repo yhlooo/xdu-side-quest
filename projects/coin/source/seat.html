@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>概率神教 - 座位问题</title>
+  <link href="./img/icon.png" rel="icon">
+  <link href="./css/bootstrap.css" rel="stylesheet"><!-- Bootstrap -->
+  <link href="./css/main.css" rel="stylesheet">
+  <link href="./css/seat.css" rel="stylesheet">
+
+</head>
+<body>
+<header class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Seat</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Coin</a></li>
+        <li><a href="lunch.html">Lunch</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="readme.html">About</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</header>
+<section>
+  <div class="container">
+    <form>
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <label for="rows">座位行数：</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="size_change('#rows', -1)"><span class="glyphicon glyphicon-minus"></span></button>
+            </span>
+            <input type="text" class="form-control" value="11" autocomplete="off" id="rows">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="size_change('#rows', 1)"><span class="glyphicon glyphicon-plus"></span></button>
+            </span>
+          </div>
+          <label for="cols">座位列数：</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="size_change('#cols', -1)"><span class="glyphicon glyphicon-minus"></span></button>
+            </span>
+            <input type="text" class="form-control" value="13" autocomplete="off" id="cols">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="size_change('#cols', 1)"><span class="glyphicon glyphicon-plus"></span></button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="text-center seat"><span class="res_row" id="res_row" onclick="select_seat(1, 20)">天选之位</span><span class="res_col" id="res_col" onclick="select_seat(2, 20)"></span></div>
+    <div class="center-block text-center tip">神将为你指引方向，轻触屏幕，开始信奉概率神教。</div>
+  </div>
+</section>
+<script src="./js/jquery.js" rel="script"></script>
+<script src="./js/bootstrap.js" rel="script"></script>
+<script src="./js/main.js" rel="script"></script>
+</body>
+</html>

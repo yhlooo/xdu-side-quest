@@ -1,0 +1,20 @@
+header.navbar.navbar-default {
+    background-color: #146496;
+}
+header.navbar.navbar-default a {
+    background-color: transparent;
+    color: #ffffff;
+}
+header.navbar.navbar-default a:hover {
+    background-color: #1482aa;
+    color: #ffffff;
+}
+header.navbar.navbar-default a:active {
+    background-color: #144664;
+    color: #ffffff;
+}
+header.navbar.navbar-default a.navbar-brand {
+    background-color: transparent;
+    color: #ffffff;
+}
+
